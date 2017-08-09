@@ -1,5 +1,5 @@
 # Dependencies
-highlighter:      pygments.rb
+highlighter:      rouge
 
 # Permalinks
 permalink:        pretty
@@ -8,8 +8,8 @@ permalink:        pretty
 title:            Seb's repository
 tagline:          'Sébastien Biass'
 description:      'Random thoughts and bits of codes compiled along the way'
-url:              https://e5k.github.io
-baseurl:          e5k.github.io/
+url:              
+baseurl:          
 
 author:           
   name:           'Sébastien Biass'
