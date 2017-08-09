@@ -1,0 +1,26 @@
+# Dependencies
+highlighter:      pygments.rb
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Seb's repository
+tagline:          'Sébastien Biass'
+description:      'Random thoughts and bits of codes compiled along the way'
+url:              https://e5k.github.io
+baseurl:          
+
+author:           
+  name:           'Sébastien Biass'
+  url:            https://e5k.github.io
+
+paginate:         5
+
+# Custom vars
+version:          
+
+github:           
+  repo:           https://github.com/e5k
+
+plugins: [jekyll-paginate]
