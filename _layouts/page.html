@@ -4,5 +4,19 @@ layout: default
 
 <div class="page">
   <h1 class="page-title">{{ page.title }}</h1>
+  <span class="post-date">
+  <i class="fa fa-tags"></i>   {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <a href="/tag/{{ tag_name }}"><code class="tag"><nobr>{{ tag_name }}</nobr></code></a>
+  {% endfor %}
+  &emsp;&emsp;&emsp; 
+  
+  <i class="fa fa-sitemap"></i>
+  {% for category in page.categories %}
+    {% capture category_name %}{{ category }}{% endcapture %}
+    <a href="/category/{{ category_name }}"><code class="tag"><nobr>{{ category_name }}</nobr></code></a>
+  {% endfor %}
+  </span>
+  
   {{ content }}
 </div>
