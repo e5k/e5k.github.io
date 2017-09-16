@@ -1,0 +1,113 @@
+figure {
+    margin-left: -1.618em;
+    margin-right: -1.618em;
+}
+@media screen and (min-width: 37.5em) {
+figure {
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+}
+}
+figure::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+figure img, figure .fluid-width-video-wrapper, figure .palette {
+    margin-bottom: 12px;
+}
+figure a img {
+    transition: box-shadow 0.3s ease 0s;
+}
+figure a img:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+figure.half {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 68em;
+}
+figure.half::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+@media screen and (min-width: 37.5em) {
+figure.half a, figure.half > img {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 48.8212%;
+}
+figure.half a:last-child, figure.half > img:last-child {
+    margin-right: 0;
+}
+figure.half a:nth-child(2n), figure.half > img:nth-child(2n) {
+    margin-right: 0;
+}
+figure.half a:nth-child(2n+1), figure.half > img:nth-child(2n+1) {
+    clear: left;
+}
+figure.half figcaption {
+    clear: left;
+}
+}
+figure.third {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 68em;
+}
+figure.third::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+@media screen and (min-width: 37.5em) {
+figure.third a, figure.third > img {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 31.7616%;
+}
+figure.third a:last-child, figure.third > img:last-child {
+    margin-right: 0;
+}
+figure.third a:nth-child(3n), figure.third > img:nth-child(3n) {
+    margin-right: 0;
+}
+figure.third a:nth-child(3n+1), figure.third > img:nth-child(3n+1) {
+    clear: left;
+}
+figure.third figcaption {
+    clear: left;
+}
+}
+figcaption {
+    clear: both;
+    color: #656564;
+    font-family: "Helvetica Neue","Segoe UI",Arial,sans-serif;
+    font-size: 15px;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+    padding-left: 1.618em;
+    padding-right: 1.618em;
+}
+@media screen and (min-width: 37.5em) {
+figcaption {
+    padding-left: 0;
+    padding-right: 0;
+}
+}
+figcaption a {
+    border-bottom: 1px dotted #656564;
+    color: #656564;
+    text-decoration: none;
+}
+figcaption a:hover {
+    border-bottom-style: solid;
+}
+.half figcaption, .third figcaption {
+    padding-left: 0;
+    padding-right: 0;
+}

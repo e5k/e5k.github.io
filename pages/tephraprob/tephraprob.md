@@ -8,12 +8,12 @@ tags: TephraProb
 
 TephraProb is a toolbox of Matlab functions designed to produce scenario-based probabilistic hazard assessments for ground tephra accumulation based on the <a href="https://github.com/ljc-geo/tephra2" target="_blank">Tephra2</a> model. The toolbox includes a series of graphical user interfaces that collect, analyse and pre--process input data, create distributions of eruption source parameters based on a wide range of probabilistic eruption scenarios, run Tephra2 using the generated input scenarios and provide results as exceedence probability maps, probabilistic isomass maps and hazard curves. 
 
-TephraProb is maintained on <a href="https://github.com/e5k/TephraProb" target="_blank">GitHub</a> and was published in <a href="https://appliedvolc.springeropen.com/articles/10.1186/s13617-016-0050-5" target="_blank">Journal of Applied Volcanology</a> as *Biass S, Bonadonna C, Connor L, Connor C (2016) TephraProb: a Matlab package for probabilistic hazard assessments of tephra fallout. J Appl Volcanol 5:1–16. *.
+TephraProb is maintained on <a href="https://github.com/e5k/TephraProb" target="_blank">GitHub</a> and was published in <a href="https://appliedvolc.springeropen.com/articles/10.1186/s13617-016-0050-5" target="_blank">Journal of Applied Volcanology</a> as *Biass S, Bonadonna C, Connor L, Connor C (2016) TephraProb: a Matlab package for probabilistic hazard assessments of tephra fallout. J Appl Volcanol 5:1–16*.
 
 This page provides the basic user-manual and archives all updates in the form of blog posts.
 
 ## User manual
-The complete user manual for TephraProb is available <a href="{{ site.baseurl }}/files/tephraprob_man.pdf" target="_blank">here</a>. Please note that the user manual provides an in-depth review of the functionalities based on the initial version of TephraProb. Be sure to check to blog to see more recent additions.
+The complete user manual for TephraProb is available <a href="{{ site.baseurl }}/files/tephraprob_man.pdf" target="_blank">here</a>. Please note that the user manual provides an in-depth review of the functionalities based on the initial version of TephraProb. Be sure to check the blog to see more recent additions.
 
 ## Video tutorial
 Video tutorial were compiled [here]({{ site.baseurl }}/pages/tephraprob-videos). 
@@ -34,3 +34,13 @@ This list illustrates applications of TephraProb:
 6. Cordon Caulle volcano, Chile <a href="https://www.researchgate.net/publication/282896424_Chronology_and_impact_of_the_2011_Puyehue-Cordon_Caulle_eruption_Chile" target="_blank" class="tag">Paper</a>
 
 ## Related blog entries
+<ul style="padding-left: 15px;">
+{% for post in site.tags.TephraProb limit: 20 %}
+  <div>
+    <li>
+         <span>{{ post.date | date:"%Y-%m-%d" }}</span> - 
+         <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    </div>
+{% endfor %}
+</ul>

@@ -13,13 +13,17 @@ import os
 tag_dir 	= 'tag/'
 post_dir 	= '_posts/'
 filenames 	= glob.glob(post_dir + '*md')
-post_dir 	= 'pages/'
 
-filenames = filenames + [os.path.join(root, name)
-             for root, dirs, files in os.walk(tag_dir)
-             for name in files
-             if name.endswith(('md'))]
 
+#post_dir 	= 'pages/'
+
+#filenames = filenames + [os.path.join(root, name)
+#             for root, dirs, files in os.walk(post_dir)
+#             for name in files
+#             if name.endswith(('md'))]
+
+
+print filenames
 
 total_tags = []
 for filename in filenames:
@@ -54,11 +58,6 @@ for tag in total_tags:
     f.write(write_str)
     f.close()
 print("Tags generated, count", total_tags.__len__())
-
-
-
-
-
 
 
 
@@ -97,4 +96,4 @@ for category in total_categories:
     write_str = '---\nlayout: categorypage\ntitle: \"Category: ' + category + '\"\ncategories: ' + category + '\nrobots: noindex\n---\n'
     f.write(write_str)
     f.close()
-print("Tags generated, count", total_categories.__len__())
+print("Categories generated, count", total_categories.__len__())

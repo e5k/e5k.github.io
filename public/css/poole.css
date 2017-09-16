@@ -410,9 +410,10 @@ tbody tr:nth-child(odd) th {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
   color: #ccc;
   text-align: center;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
 }
 
 /* Pagination items can be `span`s or `a`s */
@@ -428,6 +429,7 @@ tbody tr:nth-child(odd) th {
 /* Only provide a hover state for linked pagination items */
 a.pagination-item:hover {
   background-color: #f5f5f5;
+  border: 0px;
 }
 
 @media (min-width: 30em) {

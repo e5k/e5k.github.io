@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="post">
-<h1>Posts containing <i>{{ page.tag }}</i></h1>
+<h1>Tag: { page.tag }}</h1>
 
 <hr>
 
@@ -35,43 +35,6 @@ layout: default
 {% endfor %}
 	
 <hr>
-
-
-
-<h1>Posts containing <i>{{ page.tag }}</i></h1>
-
-<hr>
-
-
-{% for page in site.tags[page.tag] %}
-  <div class="post" style="padding-left: 20px;">
-    <h2 class="post-title">
-      <a href="{{ post.url }}">
-        {{ page.title }}
-      </a>
-    </h2>
-
-
-			<span class="page-date"><i class="fa fa-clock-o"></i> &emsp; {{ page.date | date_to_string }} &emsp;&emsp;&emsp; 
-			<i class="fa fa-tags"></i> 
-			{% for tag in page.tags %}
-			  {% capture tag_name %}{{ tag }}{% endcapture %}
-			  <a href="/tag/{{ tag_name }}"><code class="tag"><nobr>{{ tag_name }}</nobr></code></a>
-			{% endfor %}
-			&emsp;&emsp;&emsp; 
-			
-			<i class="fa fa-sitemap"></i>
-			{% for category in page.categories %}
-			  {% capture category_name %}{{ category }}{% endcapture %}
-			  <a href="/category/{{ category_name }}"><code class="tag"><nobr>{{ category_name }}</nobr></code></a>
-			{% endfor %}
-			</span>
-		
-		  </div>
-{% endfor %}
-	
-<hr>
-
 
 
 

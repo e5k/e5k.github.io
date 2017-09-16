@@ -15,12 +15,12 @@ author:
   name:           'Sébastien Biass'
   url:            https://e5k.github.io
 
-paginate:         5
-
 # Custom vars
 version:          
 
 github:           
   repo:           https://github.com/e5k
 
+paginate: 5
 plugins: 	 				[jekyll-paginate]
+paginate_path: 		'/page:num/'

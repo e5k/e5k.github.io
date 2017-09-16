@@ -7,7 +7,7 @@ tags: home
 
 <div class="posts">
 	
-	<!-- Random quote generator -->
+<!--	<!-- Random quote generator --*>
 	<div class="quoteMain">
 		<div class="quoteM">
 			<p class="script"><span id="quote-author"></span></p>
@@ -17,7 +17,7 @@ tags: home
 		<div class="quoteTB" align="right" style="width: 100%;"><img id="quoteI" src="" align="right"></div>
 	</div>
 	<script type="text/javascript" src="{{ site.baseurl }}/public/js/quote2.js"></script> 
-	
+	-->
 
 	
   {% for post in paginator.posts %}
@@ -46,16 +46,15 @@ tags: home
 
 
 
-
     {{ post.excerpt }}
   </div>
   {% endfor %}
 </div>
 
-<!--
-<div class="pagination">
+
+<!--<div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+    <a class="pagination-item older" href="{{ site.baseurl }}/blog/page{{paginator.next_page}}">Older</a>
   {% else %}
     <span class="pagination-item older">Older</span>
   {% endif %}
@@ -63,10 +62,27 @@ tags: home
     {% if paginator.page == 2 %}
       <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
     {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+      <a class="pagination-item newer" href="{{ site.baseurl }}/blog/page{{paginator.previous_page}}">Newer</a>
     {% endif %}
   {% else %}
     <span class="pagination-item newer">Newer</span>
   {% endif %}
+</div>-->
+
+<div class="pagination">
+	<span>
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous"><i class="fa fa-arrow-circle-left"></i></a>
+  {% else %}
+    <span class="previous"><i class="fa fa-arrow-circle-left"></i></span>
+  {% endif %}
+  </span>
+  <span style=" font-family: Roboto; font-weight: bold; padding-left: 15px; padding-right: 15px;">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  <span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next"><i class="fa fa-arrow-circle-right"></i></a>
+  {% else %}
+    <span class="next "><i class="fa fa-arrow-circle-right"></i></span>
+  {% endif %}
+  </span>
 </div>
--->

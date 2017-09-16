@@ -2,13 +2,41 @@
 layout: default
 ---
 <div class="post">
-<h1>{{ page.category }}</h1>
-<ul>
-{% for post in site.tags[page.tag] %}
-  <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})<br>
-    {{ post.description }}
-  </li>
-{% endfor %}
-</ul>
-</div>
+<h1>Category: {{ page.categories }}</h1>
+
 <hr>
+
+
+{% for post in site.categories[page.categories] %}
+  <div class="post" style="padding-left: 20px;">
+    <h2 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+
+
+			<span class="post-date"><i class="fa fa-clock-o"></i> &emsp; {{ post.date | date_to_string }} &emsp;&emsp;&emsp; 
+			<i class="fa fa-tags"></i> 
+			{% for tag in post.tags %}
+			  {% capture tag_name %}{{ tag }}{% endcapture %}
+			  <a href="/tag/{{ tag_name }}"><code class="tag"><nobr>{{ tag_name }}</nobr></code></a>
+			{% endfor %}
+			&emsp;&emsp;&emsp; 
+			
+			<i class="fa fa-sitemap"></i>
+			{% for category in post.categories %}
+			  {% capture category_name %}{{ category }}{% endcapture %}
+			  <a href="/category/{{ category_name }}"><code class="tag"><nobr>{{ category_name }}</nobr></code></a>
+			{% endfor %}
+			</span>
+		
+		  </div>
+{% endfor %}
+	
+<hr>
+
+
+
+
+</div>
