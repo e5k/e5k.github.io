@@ -1,6 +1,6 @@
 ---
 layout: tagpage
-title: "Tag: wind"
-tag: wind
+title: "Tag: ECMWF"
+tag: ECMWF
 robots: noindex
 ---

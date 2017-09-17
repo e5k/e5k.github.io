@@ -580,6 +580,71 @@ a.sidebar-nav-item:focus {
 
 
 
+
+
+.warning {
+	width: 100%;
+	background: repeating-linear-gradient(
+		  45deg,
+		  #ffcc1c,
+		  #ffcc1c 10px,
+		  #ffbc2c 10px,
+		  #ffbc2c 20px
+		);
+	padding: 5px;
+	border-bottom: 1px solid #ffad3e;
+	border-top: 1px solid #ffad3e;
+	-moz-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.15);
+	-webkit-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.15);
+	box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.15);
+	color: #000000;
+	font-family: "Courier New", Courier, mono;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.error {
+	width: 100%;
+	background: repeating-linear-gradient(
+		  45deg,
+		  #e65c4d,
+		  #e65c4d 10px,
+		  #dd5a4f 10px,
+		  #dd5a4f 20px
+		);
+	padding: 5px;
+	border-bottom: 1px solid #d34a4b;
+	border-top: 1px solid #d34a4b;
+	-moz-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.15);
+	-webkit-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.15);
+	box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.15);
+	color: #000000;
+	font-family: "Courier New", Courier, mono;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.info {
+	width: 100%;
+	background: repeating-linear-gradient(
+		  45deg,
+		  #3797cb,
+		  #3797cb 10px,
+		  #1588c5 10px,
+		  #1588c5 20px
+		);
+	padding: 5px;
+	border-bottom: 1px solid #1776ba;
+	border-top: 1px solid #1776ba;
+	-moz-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.15);
+	-webkit-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.15);
+	box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.15);
+	color: #ffffff;
+	font-family: "Courier New", Courier, mono;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 /*
  * Themes
  *

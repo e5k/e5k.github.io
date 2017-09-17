@@ -51,7 +51,8 @@
 .overlay-tag {
 		padding-top: 20px;
 		vertical-align: top;		
-		overflow: scroll;
+		overflow-y: auto;
+		overflow-x: hidden;
 		font-size: 20px;
 		height: calc(100% - 50px);
 		text-align: left;
