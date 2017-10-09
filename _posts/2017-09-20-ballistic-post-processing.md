@@ -53,21 +53,23 @@ Here is presented an extended version of the Matlab post-processing function dev
   </tbody>
 </table>
 
-## Source material
+### Source material
 Source material includes:
 1. Our JVGR <a href="https://www.researchgate.net/publication/304243833_Great_Balls_of_Fire_A_probabilistic_approach_to_quantify_the_hazard_related_to_ballistics_-_A_case_study_at_La_Fossa_volcano_Vulcano_Island_Italy" target="_blank">paper</a>
 2. The GBF <a href="{{ site.baseurl }}/files/gbf_man.pdf" target="_blank">user manual</a>
 3. This 2017 <a href="https://www.researchgate.net/publication/320005132_Ballistic_hazard_assessment" target="_blank">IAVCEI presentation</a>
 
-## Dependencies
+### Dependencies
 The post-processing functions rely on two files published on the Matlab File Exchange:
 1. <a href="https://uk.mathworks.com/matlabcentral/fileexchange/45699-ll2utm-and-utm2ll" target="_blank">utm2ll</a> by François Beauducel
 2. <a href="https://uk.mathworks.com/matlabcentral/fileexchange/27627-zoharby-plot-google-map" target="_blank">plot\_google\_map</a> by Zohar Bar-Yehuda
 
+### Access the code
+The post-processing function can be obtained <a href="https://github.com/e5k/GBF-Post-Processing" target="_blank">here</a>
 
-# From ballistic modelling to probabilistic hazard assessment
+## 1. From ballistic modelling to probabilistic hazard assessment
 
-## The need of a reference area
+### 1.1 The need of a reference area
 Unlike for tephra deposits, the discrete nature of ballistic impacts requires to average single ballistic impacts on a grid. Grids can fall in two main categories that are **polar** and **cartesian**. However, averaging impacts on a grid creates a dependancy of the final result to the spatial resolution. In other words:
 1. Is it acceptable for a grid to have pixels areas that vary with distance from the vent (e.g., polar grids)?
 2. Since increasing the pixel area increases the probability of impact, is there a threshold of grid resolution that provides stable results?
@@ -82,7 +84,7 @@ Probabilistic hazard assessment for ballistic impacts should therefore address t
 
 In this post-processing function, a true polar grid is not implemented. Instead, probabilities of impact are calculated using both **a given distance from the vent** (i.e., concentric rings) and at **a given radial sector around the vent**. The union probability of both approaches will result in a polar grid.
 
-## What probabilities?
+### 1.2 What probabilities?
 In frequentist analyses, probabilities must represent a ratio between a *number of ballistic impacts* satisfying a given characteristics (e.g., a kinetic energy at impact that exceeds a threshold) and a *total number of ballistics*. Depending on our definition of the second term, let's call it **B<sub>TOT</sub>**, probabilities are going to express a different message.
 
 If **B<sub>TOT</sub>** is the total number of simulated ballistics, the probability expresses **P(Z, E<sub>T</sub>)**, that is:
@@ -97,8 +99,8 @@ If **B<sub>TOT</sub>** is the total number of ballistics impacting a given zone,
 
 These probabilities are significantly different, and both are considered in the post-processing approach presented here. For simplicity, we will refer to **B<sub>TOT</sub>** as **absolute probabilities** and **B<sub>TOT</sub>** as **relative probabilities**.
 
-# Using the function
-## Input arguments
+## 2 Using the function
+### 2.1 Input arguments
 Table 1 summarises the input parameters required by the **processGBF** function. Functions can be called using a **GUI**, **arguments** or a **structure**. The following steps assume that you are in the root of the folder containing the functions.
 
 <table>
@@ -124,7 +126,7 @@ Table 1 summarises the input parameters required by the **processGBF** function.
 		  <td>String</td>
 		</tr>
 		<tr>
-		  <td>res</td>
+		  <td>gridRes</td>
 		  <td>Resolution of the cartesian grid, which can be enter either as a single value or a 1x2 vector. In the case of a 1x2 vector, the first value is the resolution of the grid used for the pixel approach and the second value is the resolution of the grid used to map the result of the concentric and radial approaches. If only one value is entered, the resolution of the grid for the concentric and radial approaches is arbitrarily set to be 10% finer than the grid used for the pixel approach. This is only done to ensure smooth display on maps.</td>
 		  <td>m</td>
 		  <td>Numeric</td>
@@ -182,7 +184,7 @@ Table 1 summarises the input parameters required by the **processGBF** function.
 **Table 1**: Input variables required by the **processGBF** function.
 
 
-### Using the GUI
+#### 2.1.1 Using the GUI
 
 In the Matlab command, type:
 {% highlight matlab %}
@@ -191,24 +193,24 @@ processGBF
 
 This approach will open two consecutive GUIs that will prompt you to i) locate the input file and ii) define the additional variables described above.
 
-### Using arguments
+#### 2.1.2 Using arguments
 This approach allows the user to enter all input argument separately from the command line:
 {% highlight matlab %}
-processGBF(pth, name, res, eT, pT, dI, rI, vE, vN, vZ)
+processGBF(pth, name, gridRes, subset, eT, pT, dI, rI, vE, vN, vZ)
 {% endhighlight %}
 
 All variables refer to Table 1.
 
-### Using an input structure
-The structure approach combines the arguments 2-8 of the argument approach into a structure. It is useful to use to output of a GBF post-processing run.
+#### 2.1.3 Using an input structure
+The structure approach combines the arguments 2-9 of the argument approach into a structure. It is useful to use to output of a GBF post-processing run.
 
 {% highlight matlab %}
 processGBF(pth, run)
 {% endhighlight %}
 
-where **run** is a Matlab structure named as the arguments 2-8 of the argument approach.
+where **run** is a Matlab structure named as the arguments 2-9 of the argument approach.
 
-## Output argument
+### 2.2 Output argument
 Calling:
 {% highlight matlab %}
 project = processGBF(...)
@@ -217,25 +219,148 @@ project = processGBF(...)
 returns a Matlab structure containing all the output data... but stick around until the next section!
 
 
-# Outputs and results
+## 3 Outputs and results
 Upon completion of the **processGBF** function, a folder named after the **name** variable is created, which contains results in a Matlab format (i.e., *name*.mat) and in a ESRI ASCII grid format. All probabilities are expressed in % and all energies are expressed in Joules.
 
-## ASCII grid format
-Probabilities are written in three main shapes:
-1. **prob-pixel** are probabilities averaged over a cartesian grid
-2. **prob-distance** are probabilities at a given distance from the vent
-3. **prob-radial** are probabilities in a given radial sector around the vent
+### 3.1 ASCII grid format
+Three main categories of ASCII files are written:
+1. **pixel**, which use a cartesian grid
+2. **concentric**, which use concentric zones around the vent
+3. **radial**, which use radial sectors around the vent
 
-Note that:
-1. Each file also contains the energy threshold for which the probability is calculated (in Joules)
-2. The **prob-distance** and the **prob-radial** files contain two additional bits of information. Files containing **all** express **P(Z, E<sub>T</sub>)** while files containing **zone** express **P(E<sub>T</sub>|Z)**
-3. The **prob-pixel** files do not make this distinction and express **P(Z, E<sub>T</sub>)**
+Each of these categories have sub-categories defined by:
+1. **prob**, which contain the exceedence probabilities (%) for ballistic impacts to exceed a given threshold of kinetic energy
+2. **en**, which contain the typical kinetic energy (J) at impact for a given exceedance probabillity
 
-Additional files contain:
-1. **en** files, showing the energy occurring within a pixel of the cartesian grid for a given probability of occurrence
-2. **nb-part** contains the number of ballistics impacting each pixel of the cartesian grid
+The probability files are themselves differentiated between:
+1. **abs**, which contain absolute probabilities and
+1. **rel**, which contain relative probabilities
 
-## Matlab format
+
+
+### 3.2 Matlab format
+The Matlab output file, i.e. *name*.mat, contains the most comprehensive output. It is compiled as a Matlab *structure* containing:
+1. **inBal**, which is a duplicate of the input arguments shown in Table 1
+2. **bal**, which contains the data of all simulated particles
+3. **pixel**, which contains the result of the processing performed using a cartesian grid  
+4. **concentric**, which contains the result of the processing performed  using concentric zones around the vent
+5. **radial**, which contains the result of the processing performed using radial sectors around the vent
+
+
+#### .bal
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<tr>
+  	  <td>x</td>
+  	  <td>Easting of each ballistic (n x 1 vector, where n is the total number of simulated ballistics)</td>
+  	</tr>
+  	<tr>
+  	  <td>y</td>
+  	  <td>Northing of each ballistic (n x 1 vector)</td>
+  	</tr>
+  	<tr>
+  	  <td>lat</td>
+  	  <td>Latitude of each ballistic (n x 1 vector)</td>
+  	</tr>
+  	<tr>
+  	  <td>lon</td>
+  	  <td>Longitude of each ballistic (n x 1 vector)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>e</td>
+  	  <td>Kinetic energy (J) at impact of each ballistic (n x 1 vector)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>n</td>
+  	  <td>Total number of simulated ballistics</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>d</td>
+  	  <td>Distance from the vent of each ballistic (n x 1 vector)</td>
+  	</tr>
+  	<tr>
+  	  <td>r</td>
+  	  <td>Angle from the vent of each ballistic (n x 1 vector)</td>
+  	</tr>
+    <tr>
+      <td>xi</td>
+      <td>X coordinate of each ballistic on the cartesian grid (n x 1 vector)</td>
+    </tr>    
+    <tr>
+      <td>yi</td>
+      <td>Y coordinate of each ballistic on the cartesian grid (n x 1 vector)</td>
+    </tr>
+    <tr>
+      <td>data</td>
+      <td>Original data contained in the user-defined input file</td>
+    </tr>
+  </tbody>
+</table>
+
+
+#### .pixel
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<tr>
+  	  <td>east</td>
+  	  <td>Easting coordinates of the cartesian grid (i x j matrix, where i and j represent the northing and easting intervals of a grid of resolution gridRes covering the entire ballistic field, respectively)</td>
+  	</tr>
+  	<tr>
+  	  <td>north</td>
+  	  <td>Northing coordinates of the cartesian grid (i x j matrix)</td>
+  	</tr>
+  	<tr>
+  	  <td>lat</td>
+  	  <td>Latitude of the cartesian grid (i x j matrix)</td>
+  	</tr>
+  	<tr>
+  	  <td>lon</td>
+  	  <td>Longitude of the cartesian grid (i x j matrix)</td>
+  	</tr>
+  	<tr>
+  	  <td>Nt</td>
+  	  <td>Number of ballistics in each pixel of the cartesian grid (i x j matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>E</td>
+  	  <td>Kinetic energy (J) at impact for a given exceedance probability computed on the cartesian grid (i x j x pT matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>N</td>
+  	  <td>Number of ballistics with kinetic energies exceeding a given energy threshold in each pixel of the cartesian grid (i x j x eT matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>Pabs</td>
+  	  <td>Absolute probability (%) for ballistic impacts to exceed an energy threshold (i x j x eT matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>Prel</td>
+  	  <td>Relative probability (%) for ballistic impacts to exceed an energy threshold </td>
+  	</tr>
+  </tbody>
+</table>
+
+
+#### .concentric
 
 <table>
   <thead>
@@ -246,100 +371,116 @@ Additional files contain:
   </thead>
   <tbody>
   	<tr>
-  	  <td colspan="2">Cartesian</td>
+  	  <td>bin</td>
+  	  <td>Distances of the concentric rings around the vent (m)</td>
   	</tr>
   	<tr>
-  	  <td>eT</td>
-  	  <td>Vector containing the energy thresholds (J)</td>
-  	</tr>
-  	<tr>
-  	  <td>pT</td>
-  	  <td>Vector containing the probability thresholds (%)</td>
+  	  <td>Nt</td>
+  	  <td>Number of ballistics in each concentric ring (length(bin) x 1 vector)</td>
   	</tr>
   	
-    <tr>
-      <td>gridP</td>
-      <td>3D matrix containing probabilities computed on a cartesian grid of size N x E x E<sub>T</sub>, where N is the number of pixel along the northing, E is the number of pixels along the easting and E<sub>T</sub> is the number of user-defined energy thresholds</td>
-    </tr>
-    <tr>
-      <td>gridE</td>
-      <td>3D matrix containing energies for a given exceedance probability computed on a cartesian grid. Same size as storP, where the third dimension is the number of user-defined probability thresholds</td>
-    </tr>
-    <tr>
-      <td>gridB</td>
-      <td>2D matrix containing the number of ballistics impacting the pixels of a cartesian grid</td>
-    </tr>
-    <tr>
-      <td>gridRes</td>
-      <td>Pixel size of the cartesian grid</td>
-    </tr>
-    
-    <tr>
-      <td>dI</td>
-      <td>2D matrix containing the number of ballistics impacting the pixels of a cartesian grid</td>
-    </tr>
-    <tr>
-      <td>dVec</td>
-      <td>2D matrix containing the number of ballistics impacting the pixels of a cartesian grid</td>
-    </tr>
-    <tr>
-      <td>dHist</td>
-      <td>2D matrix containing the number of ballistics impacting the pixels of a cartesian grid</td>
-    </tr>
-    <tr>
-      <td>dP</td>
-      <td>2D matrix containing the number of ballistics impacting the pixels of a cartesian grid</td>
-    </tr>
-    <tr>
-      <td>rI</td>
-      <td>2D matrix containing the number of ballistics impacting the pixels of a cartesian grid</td>
-    </tr>
-    <tr>
-      <td>rVec</td>
-      <td>2D matrix containing the number of ballistics impacting the pixels of a cartesian grid</td>
-    </tr>
-    <tr>
-      <td>rHist</td>
-      <td>2D matrix containing the number of ballistics impacting the pixels of a cartesian grid</td>
-    </tr>
-    <tr>
-      <td>rP</td>
-      <td>2D matrix containing the number of ballistics impacting the pixels of a cartesian grid</td>
-    </tr>
-    
-    <tr>
-      <td>n</td>
-      <td>Number of simulated ballistics</td>
-    </tr>
-    <tr>
-      <td>x</td>
-      <td>Vector containing the easting coordinate of the ballistic impact. The vector length equals the number of simulated ballistics</td>
-    </tr>
-    <tr>
-      <td>y</td>
-      <td>Vector containing the northing coordinate of the ballistic impact (same size as x)</td>
-    </tr>
-    <tr>
-      <td>d</td>
-      <td>Vector containing the distance from the vent (m; same size as x)</td>
-    </tr>
-    <tr>
-      <td>e</td>
-      <td>Vector containing ballistic energy (kJ; same size as x)</td>
-    </tr>
-    <tr>
-      <td>lat</td>
-      <td>Vector containing the latitude of the ballistic (degree; same size as x)</td>
-    </tr>
-    <tr>
-      <td>lon</td>
-      <td>Vector containing the longitude of the ballistic (degree; same size as x)</td>
-    </tr>
-    <tr>
-      <td>d</td>
-      <td>Vector containing the mass of the ballistic (same size as x)</td>
-    </tr>
+  	<tr>
+  	  <td>N</td>
+  	  <td>Number of ballistics with kinetic energies exceeding a given energy threshold in each concentric ring (length(bin) x eT matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>E</td>
+  	  <td>Kinetic energy (J) at impact for a given exceedance probability computed in each concentric ring (length(bin) x pT matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>Pabs</td>
+  	  <td>Absolute probability (%) for ballistic impacts to exceed an energy threshold (length(bin) x eT matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>Prel</td>
+  	  <td>Relative probability (%) for ballistic impacts to exceed an energy threshold (length(bin) x eT matrix)</td>
+  	</tr>
+
+  	<tr>
+  	  <td>east</td>
+  	  <td>Easting coordinates of the cartesian grid used to represent the concentric rings on a map (i x j matrix). i and j represent the northing and easting intervals of a grid of resolution gridRes(2) (or 10% of gridRes(1) covering the entire ballistic field, respectively</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>north</td>
+  	  <td>Northing coordinates of the cartesian grid used to represent the concentric rings on a map (i x j matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>lat</td>
+  	  <td>Latitude of the cartesian grid used to represent the concentric rings on a map (i x j matrix)</td>
+  	</tr>
+  	<tr>
+  	  <td>lon</td>
+  	  <td>Longitude of the cartesian grid used to represent the concentric rings on a map (i x j matrix)</td>
+  	</tr>
   </tbody>
 </table>
 
+Note that **binM**, **NtM**, **NM**, **EM**, **PabsM** and **PrelM** contain the same data as **bin**, **Nt**, **N**, **E**, **Pabs** and **Prel** gridded on a matrix, which can be used along **east/north** or **lon/lat** for plotting on a map. 
 
+
+#### .radial
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<tr>
+  	  <td>bin</td>
+  	  <td>Distances of the radial sectors around the vent (m)</td>
+  	</tr>
+  	<tr>
+  	  <td>Nt</td>
+  	  <td>Number of ballistics in each radial sector (length(bin) x 1 vector)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>N</td>
+  	  <td>Number of ballistics with kinetic energies exceeding a given energy threshold in each radial sector (length(bin) x eT matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>E</td>
+  	  <td>Kinetic energy (J) at impact for a given exceedance probability computed in each radial sector (length(bin) x pT matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>Pabs</td>
+  	  <td>Absolute probability (%) for ballistic impacts to exceed an energy threshold (length(bin) x eT matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>Prel</td>
+  	  <td>Relative probability (%) for ballistic impacts to exceed an energy threshold (length(bin) x eT matrix)</td>
+  	</tr>
+
+  	<tr>
+  	  <td>east</td>
+  	  <td>Easting coordinates of the cartesian grid used to represent the radial sectors on a map (i x j matrix). i and j represent the northing and easting intervals of a grid of resolution gridRes(2) (or 10% of gridRes(1) covering the entire ballistic field, respectively</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>north</td>
+  	  <td>Northing coordinates of the cartesian grid used to represent the radial sectors on a map (i x j matrix)</td>
+  	</tr>
+  	
+  	<tr>
+  	  <td>lat</td>
+  	  <td>Latitude of the cartesian grid used to represent the radial sectors on a map (i x j matrix)</td>
+  	</tr>
+  	<tr>
+  	  <td>lon</td>
+  	  <td>Longitude of the cartesian grid used to represent the radial sectors on a map (i x j matrix)</td>
+  	</tr>
+  </tbody>
+</table>
+
+Here again, **binM**, **NtM**, **NM**, **EM**, **PabsM** and **PrelM** contain the same data as **bin**, **Nt**, **N**, **E**, **Pabs** and **Prel** gridded on a matrix, which can be used along **east/north** or **lon/lat** for plotting on a map. 
