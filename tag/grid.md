@@ -1,6 +1,6 @@
 ---
 layout: tagpage
-title: "Tag: what"
-tag: what
+title: "Tag: grid"
+tag: grid
 robots: noindex
 ---

@@ -5,9 +5,7 @@ categories: codes
 tags: TephraProb wind ECMWF ERA-Interim
 ---
 
-One recurrent problem when accessing wind data in TephraProb is the unpredictable behaviour of the ECMWF Python API to retrieve the ERA-Interim data. It is just like Ernest Rutherford's view on what are the conclusions of any social science study: sometime it does, sometime it doesn't.
-
-If the API does not work for you, the option of importing NetCDF files that were manually downloaded from the ERA-Interim website was added to TephraProb. Ain't that nice?
+When accessing ERA-Interim data in batch, the behaviour of the ECMWF Python API is often unpredictable, which sometime complicates the automatic downloading of wind data in TephraProb. If the API does not work for you, the option of importing NetCDF files that were manually downloaded from the ERA-Interim website was added to TephraProb. Ain't that nice?
 
 Note that you still will have to:
 1. <a href="https://apps.ecmwf.int/registration/" target="_blank">Create an account</a> on the ECMWF website

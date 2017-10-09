@@ -33,7 +33,7 @@ This process is implemented in a Matlab function named [CareySparks86]({{ site.b
 </figure>
 
 ## Recommendations
-Plume height is an important source parameter, and although recent method help estimating it when observed, the characterisation of older deposit still strongly depends on the method of Carey and Sparks (1986) and the characterisation of the maximum clasts. The work of Mohssen Bagheri really reduces the uncertainty on the estimation of the drag coefficient and here are the recommendations that come out of his papers for estimating an equivalent diameter:
+The plume height is a critical source parameter, and although recent method help estimating it more precisely when observed, older deposit still strongly depends on the method of Carey and Sparks (1986) and the characterisation of the maximum clasts. The work of Mohssen Bagheri really reduces the uncertainty on the estimation of the drag coefficient and here are the recommendations that come out of his papers for estimating an equivalent diameter:
 1. For a given clast, look for the projection with the maximum area.
 2. The largest axis from this projection defines L and the smallest axis defines I. Note that they <b>do not need</b> to be perpendicular.
 3. Look for the projection with the smallest area. The smallest axis on this projection defines S.
