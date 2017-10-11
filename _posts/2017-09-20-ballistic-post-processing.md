@@ -52,6 +52,7 @@ Here is presented an extended version of the Matlab post-processing function dev
     </tr>
   </tbody>
 </table>
+<figcaption><b>Table 1</b>: Example of an input file for the <b>processGBF</b> function.</figcaption>
 
 ### Source material
 Source material includes:
@@ -101,7 +102,7 @@ These probabilities are significantly different, and both are considered in the 
 
 ## 2 Using the function
 ### 2.1 Input arguments
-Table 1 summarises the input parameters required by the **processGBF** function. Functions can be called using a **GUI**, **arguments** or a **structure**. The following steps assume that you are in the root of the folder containing the functions.
+Table 2 summarises the input parameters required by the **processGBF** function. Functions can be called using a **GUI**, **arguments** or a **structure**. The following steps assume that you are in the root of the folder containing the functions.
 
 <table>
   <thead>
@@ -181,7 +182,9 @@ Table 1 summarises the input parameters required by the **processGBF** function.
 		</tr>	
   </tbody>
 </table>
-**Table 1**: Input variables required by the **processGBF** function.
+<div class="figcaption">
+<figcaption><b>Table 2</b>: Input variables required by the <b>processGBF</b> function.</figcaption>
+</div>
 
 
 #### 2.1.1 Using the GUI
@@ -484,3 +487,10 @@ Note that **binM**, **NtM**, **NM**, **EM**, **PabsM** and **PrelM** contain the
 </table>
 
 Here again, **binM**, **NtM**, **NM**, **EM**, **PabsM** and **PrelM** contain the same data as **bin**, **Nt**, **N**, **E**, **Pabs** and **Prel** gridded on a matrix, which can be used along **east/north** or **lon/lat** for plotting on a map. 
+
+## 4 Displaying results
+The **displayGBF** function offers an interactive GUI to plot the results of the **processGBF** function. Start it by typing
+{% highlight matlab %}
+processGBF
+{% endhighlight %}
+in the Matlab command. Then select the *name*.mat file output of the **processGBF** function and you are good to go!
