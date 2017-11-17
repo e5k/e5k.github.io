@@ -2,7 +2,7 @@
 layout: post
 title: The effect of particle shape on the estimation of plume height
 categories: codes
-tags: carey-sparks-86 plume-height
+tags: carey-sparks-86 plume-height Isopleth
 ---
 
 The method of <a href="https://link.springer.com/article/10.1007%2FBF01046546?LI=true" target="_blank">Carey and Sparks (1986)</a> allows to estimate the height of strong plumes based on the geometry of isopleth maps. Although the method has its limitations, it is still the most used in the literature and remains important for the characterisation of eruption source parameters for eruptions that have no direct observations.

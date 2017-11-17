@@ -98,6 +98,7 @@ h2 {
   margin-top: 1rem;
   font-size: 1.5rem;
   color: #0c1e21;
+  border-bottom: 1px solid #0c1e21;
 }
 h3 {
   margin-top: 1.5rem;
@@ -129,10 +130,6 @@ strong {
 ul, ol, dl {
   margin-top: 10px;
   margin-bottom: 40px;
-}
-
-li {
-	margin-left: 10px;
 }
 
 
