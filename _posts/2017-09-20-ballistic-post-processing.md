@@ -491,6 +491,6 @@ Here again, **binM**, **NtM**, **NM**, **EM**, **PabsM** and **PrelM** contain t
 ## 4 Displaying results
 The **displayGBF** function offers an interactive GUI to plot the results of the **processGBF** function. Start it by typing
 {% highlight matlab %}
-processGBF
+displayGBF
 {% endhighlight %}
 in the Matlab command. Then select the *name*.mat file output of the **processGBF** function and you are good to go!

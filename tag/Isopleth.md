@@ -1,6 +1,6 @@
 ---
 layout: tagpage
-title: "Tag: example"
-tag: example
+title: "Tag: Isopleth"
+tag: Isopleth
 robots: noindex
 ---

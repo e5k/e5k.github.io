@@ -12,13 +12,13 @@ TephraProb is maintained on <a href="https://github.com/e5k/TephraProb" target="
 
 This page provides the basic user-manual and archives all updates in the form of blog posts.
 
-## User manual
+### User manual
 The complete user manual for TephraProb is available <a href="{{ site.baseurl }}/files/tephraprob_man.pdf" target="_blank">here</a>. Please note that the user manual provides an in-depth review of the functionalities based on the initial version of TephraProb. Be sure to check the blog to see more recent additions.
 
-## Video tutorial
+### Video tutorial
 Video tutorial were compiled [here]({{ site.baseurl }}/pages/tephraprob-videos). 
 
-## Example of applications
+### Example of applications
 This list illustrates applications of TephraProb:
 
 1. Cotopaxi volcano, Ecuador <a href="https://www.researchgate.net/publication/256325979_A_fast_GIS-based_risk_assessment_for_tephra_fallout_The_example_of_Cotopaxi_volcano_Ecuador_Part_I_Probabilistic_hazard_assessment" target="_blank" class="tag">Paper 1</a><a href="https://www.researchgate.net/publication/256326095_A_fast_GIS-based_risk_assessment_for_tephra_fallout_The_example_of_Cotopaxi_volcano_Ecuador_Part_II_Vulnerability_and_risk_assessment" target="_blank" class="tag">Paper 2</a>
@@ -33,14 +33,19 @@ This list illustrates applications of TephraProb:
 
 6. Cordon Caulle volcano, Chile <a href="https://www.researchgate.net/publication/282896424_Chronology_and_impact_of_the_2011_Puyehue-Cordon_Caulle_eruption_Chile" target="_blank" class="tag">Paper</a>
 
-## Related blog entries
-<ul style="padding-left: 15px;">
-{% for post in site.tags.TephraProb limit: 20 %}
-  <div>
-    <li>
-         <span>{{ post.date | date:"%Y-%m-%d" }}</span> - 
-         <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    </div>
-{% endfor %}
-</ul>
+### Related blog entries
+<div class="related">
+  <ul class="related-posts">
+    {% for post in site.tags.TephraProb limit: 20 %}
+      <li>
+        <h4>
+          <a href="{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h4>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
