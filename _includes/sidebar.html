@@ -12,14 +12,19 @@
 
     <nav class="sidebar-nav">
     	<ul class="menulist">
-    		<li><a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Blog</a></li>
+    		<li><a class="sidebar-nav-item{% if page.categories contains 'blog' %} active{% endif %}" href="{{ site.baseurl }}/">Blog</a></li>
     		<!--<li><a class="sidebar-nav-item" href="{{ site.baseurl }}/blog">Blog</a></li>-->
-    		<li><a class="sidebar-nav-item" href="{{ site.baseurl }}/pages/codes">Codes</a></li>
-<!--    			<ul class="menulist2">
-    				<li><a class="sidebar-nav-item" href="{{ site.baseurl }}/pages/tephraprob">TephraProb</a></li>
-    				<li><a class="sidebar-nav-item" href="{{ site.baseurl }}/pages/terror">TError</a></li>
-    				<li><a class="sidebar-nav-item" href="{{ site.baseurl }}/pages/gbf">GBF</a></li>
-    			</ul>-->
+    		<li><a class="sidebar-nav-item{% if page.categories contains 'codes' %} active{% endif %}" href="{{ site.baseurl }}/pages/codes">Codes</a></li>
+    		{% if page.categories contains 'codes' %}	
+    			<ul class="menulist2">
+    				<li><a class="sidebar-nav-subitem{% if page.tags contains 'tephraprob' %} active{% endif %}" href="{{ site.baseurl }}/pages/tephraprob">TephraProb</a></li>
+    				<li><a class="sidebar-nav-subitem{% if page.tags contains 'tephrafits' %} active{% endif %}" href="{{ site.baseurl }}/pages/tephrafits">TephraFits</a></li>
+    				<li><a class="sidebar-nav-subitem{% if page.tags contains 'terror' %} active{% endif %}" href="{{ site.baseurl }}/pages/terror">TError</a></li>
+    				<li><a class="sidebar-nav-subitem{% if page.tags contains 'gbf' %} active{% endif %}" href="{{ site.baseurl }}/pages/gbf">GBF</a></li>
+    				<li><a class="sidebar-nav-subitem{% if page.tags contains 'totgs' %} active{% endif %}" href="{{ site.baseurl }}/pages/totgs">TOTGS</a></li>
+    				<li><a class="sidebar-nav-subitem{% if page.tags contains 'carey-sparks-86' %} active{% endif %}" href="{{ site.baseurl }}/pages/cs86">C&S 1986</a></li>
+    			</ul>
+    		{% endif %}
     		<li><a class="sidebar-nav-item">Me myself and I</a></li>
     	</ul>
     

@@ -2,7 +2,7 @@
 layout: post
 title: Manually importing ERA-Interim files in TephraProb
 categories: codes
-tags: TephraProb wind ECMWF ERA-Interim
+tags: tephraprob wind ECMWF ERA-Interim
 ---
 
 When accessing ERA-Interim data in batch, the behaviour of the ECMWF Python API is often unpredictable, which sometime complicates the automatic downloading of wind data in TephraProb. If the API does not work for you, the option of importing NetCDF files that were manually downloaded from the ERA-Interim website was added to TephraProb. Ain't that nice?

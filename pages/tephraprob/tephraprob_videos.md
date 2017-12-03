@@ -3,7 +3,7 @@ layout: page
 title: TephraProb video tutorial
 permalink: pages/tephraprob-videos
 categories: codes
-tags: TephraProb tutorial videos
+tags: tephraprob tutorial videos
 ---
 
 ### 1/7 Introduction

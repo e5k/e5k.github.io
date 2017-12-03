@@ -1,6 +1,6 @@
 ---
 layout: tagpage
-title: "Tag: GBF"
-tag: GBF
+title: "Tag: gbf"
+tag: gbf
 robots: noindex
 ---

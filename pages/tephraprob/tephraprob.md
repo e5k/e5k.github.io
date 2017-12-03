@@ -2,9 +2,15 @@
 layout: page
 title: TephraProb
 permalink: pages/tephraprob
-categories: Codes
-tags: TephraProb
+categories: codes
+tags: tephraprob
 ---
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/e5k/TephraProb/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download e5k/TephraProb on GitHub">Download</a>
+<a class="github-button" href="https://github.com/e5k/TephraProb" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star e5k/TephraProb on GitHub">Star</a>
+<a class="github-button" href="https://github.com/e5k/TephraProb/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork e5k/TephraProb on GitHub">Fork</a>
+
 
 TephraProb is a toolbox of Matlab functions designed to produce scenario-based probabilistic hazard assessments for ground tephra accumulation based on the <a href="https://github.com/ljc-geo/tephra2" target="_blank">Tephra2</a> model. The toolbox includes a series of graphical user interfaces that collect, analyse and pre--process input data, create distributions of eruption source parameters based on a wide range of probabilistic eruption scenarios, run Tephra2 using the generated input scenarios and provide results as exceedence probability maps, probabilistic isomass maps and hazard curves. 
 

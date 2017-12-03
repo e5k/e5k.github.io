@@ -2,9 +2,13 @@
 layout: page
 title: TError
 permalink: pages/terror
-categories: Codes
-tags: TError
+categories: codes
+tags: terror
 ---
+
+<a class="github-button" href="https://github.com/e5k/TError/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download e5k/TError on GitHub">Download</a>
+<a class="github-button" href="https://github.com/e5k/TError" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star e5k/TError on GitHub">Star</a>
+<a class="github-button" href="https://github.com/e5k/TError/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork e5k/TError on GitHub">Fork</a>
 
 TError is a Matlab package designed to quantify systematically the uncertainty associated with the characterisation of tephra deposits, in which the most commonly used methods to quantify eruption source parameters are implemented. Inputs of the code are a range of field-based, model-based and empirical parameters (i.e., clast diameter, crosswind and downwind ranges, thickness measurement, area of isopach contours, bulk deposit density, empirical constants and wind speed).
 

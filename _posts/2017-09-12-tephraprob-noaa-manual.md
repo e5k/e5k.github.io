@@ -2,7 +2,7 @@
 layout: post
 title: Manually importing NOAA Reanalysis files in TephraProb
 categories: codes
-tags: TephraProb wind NOAA
+tags: tephraprob wind NOAA
 ---
 
 Sometime, you might want to be able to import into TephraProb some NOAA Reanalysis NetCDF files downloaded manually. One of the reasons is that the NOAA server is accessed via FTP, and firewalls (such as those installed in University networks) might result in an error such as this:

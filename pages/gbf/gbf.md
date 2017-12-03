@@ -2,8 +2,8 @@
 layout: page
 title: Great Balls of Fire
 permalink: pages/gbf
-categories: Codes
-tags: GBF
+categories: codes
+tags: gbf
 ---
 
 Great Balls of Fire (GBF) is an approach for the probabilistic hazard assessment of volcanic ballistic projectiles (VBP). It contains a model describing ballistic trajectories of VBPs accounting for a variable drag coefficient and topography and is designed to model large numbers of VBPs stochastically. Associated functions come with the GBF code to post-process model outputs into a comprehensive probabilistic hazard assessment for VBP impacts. Outcomes include probability maps to exceed given thresholds of kinetic energies at impact, hazard curves and probabilistic isoenergy maps. Probabilities are calculated either on equally-sized pixels or zones of interest. 

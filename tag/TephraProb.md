@@ -1,6 +1,6 @@
 ---
 layout: tagpage
-title: "Tag: TephraProb"
-tag: TephraProb
+title: "Tag: tephraprob"
+tag: tephraprob
 robots: noindex
 ---

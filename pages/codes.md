@@ -10,6 +10,7 @@ categories: codes
   Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
 </p>
 -->
+{{ site.baseurl }}
 
 Here are listed some of the codes I am working on.
 

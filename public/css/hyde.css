@@ -70,6 +70,16 @@ html {
 }
 
 
+/* Started doing that in case I ever find out how to do parallax effect
+.central {
+	background:yellow;
+	position: relative;
+	height: 100vh;
+	margin: 0;
+}
+*/
+
+
 
 
 /* right sidebar */
@@ -241,7 +251,8 @@ a.nav__link:focus {
     list-style-position: outside;
     margin: 0;
     padding: 0;
-	text-indent: 10px;
+		text-indent: 10px;
+		line-height: 1.2em;
 }
 /* About section */
 .sidebar-about h1 {
@@ -261,6 +272,10 @@ a.nav__link:focus {
   line-height: 1.75;
   border-style: none;
 }
+.sidebar-nav-subitem {
+  line-height: 0;
+  font-size: 80%;
+}
 
 
 /*  display: block; */
@@ -275,21 +290,30 @@ a.nav__link:focus {
 	transition: transform 0.3s, opacity 0.2s;
 }
 
+
+/*.sidebar-nav a::before {
+	margin-right: 10px;
+	content: '';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+	
+}*/
 .sidebar-nav a::before {
 	margin-right: 10px;
-	content: '[';
+	content: '|';
 	-webkit-transform: translateX(20px);
 	-moz-transform: translateX(20px);
 	transform: translateX(20px);
 }
 
-.sidebar-nav a::after {
+/*.sidebar-nav a::after {
 	margin-left: 10px;
 	content: ']';
 	-webkit-transform: translateX(-20px);
 	-moz-transform: translateX(-20px);
 	transform: translateX(-20px);
-}
+}*/
 
 .sidebar-nav a:hover::before,
 .sidebar-nav a:hover::after,
@@ -304,7 +328,9 @@ a.nav__link:focus {
 
 
 a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
+a.sidebar-nav-item:focus,
+a.sidebar-nav-subitem:hover,
+a.sidebar-nav-subitem:focus {
   text-decoration: none;  
   color: #ea8023;
       -moz-transition: all .1s ease-in;
@@ -316,8 +342,14 @@ a.sidebar-nav-item:focus {
       transition: all .1s ease-in;
   border-style: none;
 }
-.sidebar-nav-item.active {
-  font-weight: bold;
+
+
+
+
+
+
+.sidebar-nav-item.active,
+.sidebar-nav-subitem.active {
   color: #ea8023;
 }
 
@@ -359,6 +391,8 @@ a.sidebar-nav-item:focus {
     left:   1rem;
   }
 }
+
+
 
 
 /* Container
