@@ -410,16 +410,21 @@ thead {
 }
 .related-posts h3 {
   margin-top: 0;}
+    
+.related-posts li {	
+	padding-left: 20px;
+}
+
 .related-posts li small {
   font-size: 75%;
   color: #999;
 }
 .related-posts li a:hover {
-  color: #ea8023;
-  text-decoration: none;
+  color: #999;
+  border-bottom: 0px;
 }
 .related-posts li a:hover small {
-  color: inherit;
+  color: #ea8023;
 }
 
 .related h3, h4, h5, h6{

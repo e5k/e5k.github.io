@@ -10,7 +10,7 @@ tags: terror
 <a class="github-button" href="https://github.com/e5k/TError" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star e5k/TError on GitHub">Star</a>
 <a class="github-button" href="https://github.com/e5k/TError/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork e5k/TError on GitHub">Fork</a>
 
-TError is a Matlab package designed to quantify systematically the uncertainty associated with the characterisation of tephra deposits, in which the most commonly used methods to quantify eruption source parameters are implemented. Inputs of the code are a range of field-based, model-based and empirical parameters (i.e., clast diameter, crosswind and downwind ranges, thickness measurement, area of isopach contours, bulk deposit density, empirical constants and wind speed).
+TError is a Matlab package designed to quantify the uncertainty of eruption source parameters calculated from tephra deposits. Inputs of the code are a range of field-based, model-based and empirical parameters (i.e., clast diameter, crosswind and downwind ranges, thickness measurement, area of isopach contours, bulk deposit density, empirical constants and wind speed).
 
 TError is maintained on <a href="https://github.com/e5k/TError" target="_blank">GitHub</a> and was published in <a href="http://scholarcommons.usf.edu/siv/vol1/iss1/2/" target="_blank">Statistics in Volcanology</a> as *Biass S, Bagheri G, Aeberhard W, Bonadonna C (2014) TError: towards a better quantification of the uncertainty propagated during the characterization of tephra deposits. Stat Volcanol 1:1–27*.
 
@@ -26,10 +26,10 @@ This list illustrates applications of TError:
 
 <div class="related">
   <ul class="related-posts">
-    {% for post in site.tags.TError limit: 20 %}
+    {% for post in site.tags.terror limit: 20 %}
       <li>
         <h4>
-          <a href="{{ post.url }}">
+          <small>＿ </small><a href="{{ post.url }}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>

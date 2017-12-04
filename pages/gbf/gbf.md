@@ -23,10 +23,10 @@ This list illustrates applications of GBF:
 ### Related blog entries
 <div class="related">
   <ul class="related-posts">
-    {% for post in site.tags.GBF limit: 20 %}
+    {% for post in site.tags.gbf limit: 20 %}
       <li>
         <h4>
-          <a href="{{ post.url }}">
+          <small>＿ </small><a href="{{ post.url }}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>

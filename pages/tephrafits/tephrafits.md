@@ -21,7 +21,7 @@ tags: tephrafits
     {% for post in site.tags.tephrafits limit: 20 %}
       <li>
         <h4>
-          <a href="{{ post.url }}">
+          <small>＿ </small><a href="{{ post.url }}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>

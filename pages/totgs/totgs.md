@@ -20,10 +20,10 @@ The user manual for TOTGS is available <a href="{{ site.baseurl }}/files/totgs_m
 ### Related blog entries
 <div class="related">
   <ul class="related-posts">
-    {% for post in site.tags.TOTGS limit: 20 %}
+    {% for post in site.tags.totgs limit: 20 %}
       <li>
         <h4>
-          <a href="{{ post.url }}">
+          <small>＿ </small><a href="{{ post.url }}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>

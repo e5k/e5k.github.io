@@ -21,7 +21,7 @@ Here are listed some of the codes I am working on.
 **[TephraFits]({{ site.baseurl }}/pages/tephrafits)** is a Matlab function to describe the geometry of tephra deposits.
 
 ### TError
-**[TError]({{ site.baseurl }}/pages/terror)** is a set of Matlab functions that use a Monte-Carlo approach to quantify the uncertainty when characterising tephra deposits.
+**[TError]({{ site.baseurl }}/pages/terror)** is a set of Matlab functions that use a Monte-Carlo approach to quantify the uncertainty of eruption source parameters calculated from tephra deposits.
 
 
 ### Great Balls of Fire
