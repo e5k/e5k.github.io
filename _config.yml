@@ -20,6 +20,10 @@ version:
 
 github:           
   repo:           https://github.com/e5k
+  
+markdown: kramdown
+kramdown:
+  input: GFM          # this is a support for GitHub Flavored Markdown
 
 paginate: 5
 plugins: 	 				[jekyll-paginate]

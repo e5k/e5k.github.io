@@ -211,7 +211,7 @@ The structure approach combines the arguments 2-9 of the argument approach into 
 processGBF(pth, run)
 {% endhighlight %}
 
-where **run** is a Matlab structure named as the arguments 2-9 of the argument approach.
+where <var>run</var> is a Matlab structure named as the arguments 2-9 of the argument approach.
 
 ### 2.2 Output argument
 Calling:
@@ -223,31 +223,31 @@ returns a Matlab structure containing all the output data... but stick around un
 
 
 ## 3 Outputs and results
-Upon completion of the **processGBF** function, a folder named after the **name** variable is created, which contains results in a Matlab format (i.e., *name*.mat) and in a ESRI ASCII grid format. All probabilities are expressed in % and all energies are expressed in Joules.
+Upon completion of the <var>processGBF</var> function, a folder named after the <var>name</var> variable is created, which contains results in a Matlab format (i.e., *name*.mat) and in a ESRI ASCII grid format. All probabilities are expressed in % and all energies are expressed in Joules.
 
 ### 3.1 ASCII grid format
 Three main categories of ASCII files are written:
-1. **pixel**, which use a cartesian grid
-2. **concentric**, which use concentric zones around the vent
-3. **radial**, which use radial sectors around the vent
+1. <var>pixel</var>, which use a cartesian grid
+2. <var>concentric</var>, which use concentric zones around the vent
+3. <var>radial</var>, which use radial sectors around the vent
 
 Each of these categories have sub-categories defined by:
-1. **prob**, which contain the exceedence probabilities (%) for ballistic impacts to exceed a given threshold of kinetic energy
-2. **en**, which contain the typical kinetic energy (J) at impact for a given exceedance probabillity
+1. <var>prob</var>, which contain the exceedence probabilities (%) for ballistic impacts to exceed a given threshold of kinetic energy
+2. <var>en</var>, which contain the typical kinetic energy (J) at impact for a given exceedance probabillity
 
 The probability files are themselves differentiated between:
-1. **abs**, which contain absolute probabilities and
-1. **rel**, which contain relative probabilities
+1. <var>abs</var>, which contain absolute probabilities and
+1. <var>rel</var>, which contain relative probabilities
 
 
 
 ### 3.2 Matlab format
 The Matlab output file, i.e. *name*.mat, contains the most comprehensive output. It is compiled as a Matlab *structure* containing:
-1. **inBal**, which is a duplicate of the input arguments shown in Table 1
-2. **bal**, which contains the data of all simulated particles
-3. **pixel**, which contains the result of the processing performed using a cartesian grid  
-4. **concentric**, which contains the result of the processing performed  using concentric zones around the vent
-5. **radial**, which contains the result of the processing performed using radial sectors around the vent
+1. <var>inBal</var>, which is a duplicate of the input arguments shown in Table 1
+2. <var>bal</var>, which contains the data of all simulated particles
+3. <var>pixel</var>, which contains the result of the processing performed using a cartesian grid  
+4. <var>concentric</var>, which contains the result of the processing performed  using concentric zones around the vent
+5. <var>radial</var>, which contains the result of the processing performed using radial sectors around the vent
 
 
 #### .bal
@@ -489,8 +489,8 @@ Note that **binM**, **NtM**, **NM**, **EM**, **PabsM** and **PrelM** contain the
 Here again, **binM**, **NtM**, **NM**, **EM**, **PabsM** and **PrelM** contain the same data as **bin**, **Nt**, **N**, **E**, **Pabs** and **Prel** gridded on a matrix, which can be used along **east/north** or **lon/lat** for plotting on a map. 
 
 ## 4 Displaying results
-The **displayGBF** function offers an interactive GUI to plot the results of the **processGBF** function. Start it by typing
+The <var>displayGBF</var> function offers an interactive GUI to plot the results of the <var>processGBF</var> function. Start it by typing
 {% highlight matlab %}
 displayGBF
 {% endhighlight %}
-in the Matlab command. Then select the *name*.mat file output of the **processGBF** function and you are good to go!
+in the Matlab command. Then select the <pth>name*.mat</pth> file output of the <var>processGBF</var> function and you are good to go!

@@ -614,6 +614,29 @@ a.sidebar-nav-subitem:focus {
 
 
 
+var {
+	color: #ea8023;
+  text-align: left;
+  padding: .25em .5em;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  text-decoration: none;
+  font: 95% "Courier New", Courier, mono;
+}
+cmd {
+  text-decoration: none;
+  font: 95% "Courier New", Courier, mono;
+}
+pth {
+	color: #0c1e21;
+  text-align: left;
+  padding: .25em .5em;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  text-decoration: none;
+  font: 95% "Courier New", Courier, mono;
+}
+
 
 
 .warning {
