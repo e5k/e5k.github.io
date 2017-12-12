@@ -1,16 +1,18 @@
 pre.highlight,
 .highlight pre { background-color: #0c1e21;
 	opacity: 0.7;
+	color: #9c9c9c;
 }
 .highlight .hll { background-color: #0c1e21 opacity: 0.7;
+	color: #9c9c9c;
 }
 .highlight .c { color: #99AA8A } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
 .highlight .k { color: #93C763 } /* Keyword */
-.highlight .l { color: #ae81ff } /* Literal */
-.highlight .n { color: #F1F2F3 } /* Name */
+.highlight .l { color: #678CB1} /* Literal */
+.highlight .n { color: #898a8a} /* Name */
 .highlight .o { color: #E8E2B7 } /* Operator */
-.highlight .p { color: #F1F2F3 } /* Punctuation */
+.highlight .p { color: #626567} /* Punctuation */
 .highlight .ch { color: #99AA8A } /* Comment.Hashbang */
 .highlight .cm { color: #99AA8A } /* Comment.Multiline */
 .highlight .cp { color: #99AA8A } /* Comment.Preproc */
