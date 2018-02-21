@@ -22,9 +22,9 @@ This page provides the basic user-manual and archives all updates in the form of
 The complete user manual for TephraProb is available <a href="{{ site.baseurl }}/files/tephraprob_man.pdf" target="_blank">here</a>. Please note that the user manual provides an in-depth review of the functionalities based on the initial version of TephraProb. Be sure to check the blog to see more recent additions.
 
 ### Video tutorial
-Video tutorial were compiled [here]({{ site.baseurl }}/pages/tephraprob-videos). 
+Video tutorials were compiled [here]({{ site.baseurl }}/pages/tephraprob-videos). 
 
-### Example of applications
+### Case studies
 This list illustrates applications of TephraProb:
 
 1. Cotopaxi volcano, Ecuador <a href="https://www.researchgate.net/publication/256325979_A_fast_GIS-based_risk_assessment_for_tephra_fallout_The_example_of_Cotopaxi_volcano_Ecuador_Part_I_Probabilistic_hazard_assessment" target="_blank" class="tag">Paper 1</a><a href="https://www.researchgate.net/publication/256326095_A_fast_GIS-based_risk_assessment_for_tephra_fallout_The_example_of_Cotopaxi_volcano_Ecuador_Part_II_Vulnerability_and_risk_assessment" target="_blank" class="tag">Paper 2</a>

@@ -25,6 +25,6 @@ markdown: kramdown
 kramdown:
   input: GFM          # this is a support for GitHub Flavored Markdown
 
-paginate: 5
+paginate: 20
 plugins: 	 				[jekyll-paginate]
 paginate_path: 		'/page:num/'
