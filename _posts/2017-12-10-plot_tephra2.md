@@ -12,7 +12,7 @@ Additionally, Tephra works with UTM coordinates. This function accepts optional 
 2. <a href="https://uk.mathworks.com/matlabcentral/fileexchange/27627-zoharby-plot-google-map" target="_blank">plot\_google\_map</a> by Zohar Bar-Yehuda
 
 ## The function
-The function <cmd>plotT2</cmd> can be downloaded here <a href="https://github.com/e5k/Tephra2Utils" target="_blank">utm2ll</a>. One argument is required, which is a string containing the path to the file. Outputs are then matrices of easting (<var>E</var>), northing (<var>N</var>) and mass accumulation (<var>M</var>):
+The function <cmd>plotT2</cmd> can be downloaded<a href="https://github.com/e5k/Tephra2Utils" target="_blank"> here</a>. One argument is required, which is a string containing the path to the file. Outputs are then matrices of easting (<var>E</var>), northing (<var>N</var>) and mass accumulation (<var>M</var>):
 
 {% highlight matlab %}
 [E, N, M] = plotT2('example.out');
