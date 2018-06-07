@@ -5,8 +5,6 @@ categories: codes tips
 tags: tephra2 inversion
 ---
 
-# Inversion
-
 The current set of functions helps running the advection-diffusion model Tephra2 in inversion mode to estimate the best eruption source parameters (ESP) of a tephra deposit. The functions contain two sections. A first section contains a mixture of bash and python scripts for running the inversion of *OpenPBS* and *SLURM* clusters. A second section contains Matlab scripts for processing the inversion output designed to help its interpretation.
 
 ## Introduction
@@ -91,6 +89,7 @@ Below is a summary of the different sections to fill in.
 **Inversion behaviour**
 
 This section controls the general behaviour of the inversion runs.
+
 Variable | Description
 ---------|------------
 BATCH | Enter 0 for single runs, 1 for batch runs
@@ -99,6 +98,7 @@ fixedWind | Enter 0 to use ranges of wind direction/speed, 1 to use a wind profi
 **Input files**
 
 This section defines the path to the input files previously described.
+
 Variable | Description
 ---------|------------
 inputFile | File containing the field observations
@@ -119,6 +119,7 @@ ventZ | UTM zone of the vent. Only the numeric part, negative in S hemisphere
 **Ranges to invert**
 
 This section contains all the variable parameters that are optimized during the inversion. Each parameter contains min/max values.
+
 Variable | Description
 ---------|------------
 Ht | Plume heights (m asl)
