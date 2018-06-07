@@ -20,13 +20,14 @@ Here are listed some of the codes I am working on.
 ### TephraFits
 **[TephraFits]({{ site.baseurl }}/pages/tephrafits)** is a Matlab function to describe the geometry of tephra deposits.
 
+### Tephra2Utils
+**[Tephra2Utils]({{ site.baseurl }}/pages/tephra2utils)** is a Matlab toolbox that provides cool and useful additional functions to Tephra2.
+
 ### TError
 **[TError]({{ site.baseurl }}/pages/terror)** is a set of Matlab functions that use a Monte-Carlo approach to quantify the uncertainty of eruption source parameters calculated from tephra deposits.
 
-
 ### Great Balls of Fire
 **[Great Balls of Fire]({{ site.baseurl }}/pages/gbf)** is a method for the probabilistic hazard assessment of ballistic blocks. It contain a simulator written in Scala and Matlab functions for the post processing.
-
 
 ### TOTGS
 **[TOTGS]({{ site.baseurl }}/pages/totgs)** is a Matlab wrapper for the reconstruction of the total grain-size distribution of tephra fallout using the method of Bonadonna and Houghton (2005).

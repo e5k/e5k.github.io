@@ -178,10 +178,11 @@ abbr[title] {
 code,
 pre {
   font-family: Menlo, Monaco, "Courier New", monospace;
+  background-color: #0c1e21; /* Black*/
 }
 code {
   padding: .25em .5em;
-  font-size: 85%;
+  font-size: 11pt;
   color: #bf616a;
   background-color: #f9f9f9;
   border-radius: 3px;
@@ -198,8 +199,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #173a40;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 pre code {
   padding: 0;
@@ -211,7 +211,7 @@ pre code {
 /* Pygments via Jekyll */
 .highlight {
   margin-bottom: 1rem;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 .highlight pre {
   margin-bottom: 0;
@@ -265,27 +265,36 @@ img {
 
 /* Tables */
 table {
+  font-family: Roboto, sans-serif;
+  font-size: 11pt;
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 100%;
   border: 1px solid #e5e5e5;
   border-collapse: collapse;
-  font-size: 13px;
+ 
 }
 td,
 th {
   padding: .25rem .5rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid transparent; /* No more visible border */
+  height: 30px; 
 }
 
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
+tbody tr:nth-child(even) td,
+tbody tr:nth-child(even) th {
+  background-color: #DFDFDF;
+}
+
 thead {
-    background-color:#173a40;
-    color: #fff;
+    background: #ccc;  /* Darken header a bit */
+    font-weight: bold;
     text-align: left;
+    
 	}
 
 /*

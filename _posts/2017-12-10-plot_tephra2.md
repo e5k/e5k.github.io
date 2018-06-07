@@ -2,7 +2,7 @@
 layout: post
 title: Plot the output of Tephra2 in Matlab
 categories: codes utilities
-tags: tephraprob matlab tephra2 map
+tags: tephra2utils tephra2 map
 ---
 
 This is a quick and dirty function that I needed to directly plot the output of Tephra2 runs on a map. Tephra2 outputs are in a *column* format (i.e. easting, northing, elevation and mass accumulation), with the number of rows equal to the total number of points in the grid. For some obscure reason, most of Matlab's plotting functions only accept inputs in a *matrix* format, i.e. separate <cmd>m x n</cmd> matrices for easting, northing, elevation and mass accumulation, where <cmd>m</cmd> and <cmd>n</cmd> are the numbers of northing and easting values, respectively. Matlab, unlike other plotting tools (e.g. GMT, Python), therefore requires a transformation the data.
