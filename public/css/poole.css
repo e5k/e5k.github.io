@@ -191,13 +191,14 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 1rem;
-  font-size: .8rem;
+  font-size: .6rem;
+  color: #fff;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f9f9f9;
+  background-color: #173a40;
   border-radius: 10px;
 }
 pre code {
@@ -264,7 +265,8 @@ img {
 
 /* Tables */
 table {
-  margin-bottom: .2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   width: 100%;
   border: 1px solid #e5e5e5;
   border-collapse: collapse;
@@ -281,9 +283,9 @@ tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
 thead {
-    background-color:#0c1e21;
-		opacity: 0.73;
-		color: #dedede;
+    background-color:#173a40;
+    color: #fff;
+    text-align: left;
 	}
 
 /*

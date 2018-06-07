@@ -7,7 +7,7 @@ tags: tephra2 inversion
 
 The current set of functions helps running the advection-diffusion model Tephra2 in inversion mode to estimate the best eruption source parameters (ESP) of a tephra deposit. The functions contain two sections. A first section contains a mixture of bash and python scripts for running the inversion of *OpenPBS* and *SLURM* clusters. A second section contains Matlab scripts for processing the inversion output designed to help its interpretation.
 
-## Introduction
+### Introduction
 The inversion searches for the set of ESP that best reproduce *observed* values of tephra accumulations (kg/m<sup>2</sup>) with the *computed* values produced by Tephra2. As for any optimization problem, the many degrees of freedom require a critical interpretation of the inversion results. These scripts help building an empirical vision of the results in the perspective of the knowledge of the studied eruption.
 
 For a purpose of illustration, let's consider that the fit depends mainly on *plume height* and *eruption mass*. We will therefore attempt to find the combination of plume height and eruption mass that best reproduce the deposit. To do so, the Tephra2 uses a [downhill simplex](https://en.wikipedia.org/wiki/Nelder–Mead_method) method, which searches for the minimum of a function - here the fit between observed and computed values - between user-defined ranges of [height<sub>min</sub> - height<sub>max</sub>] and [mass<sub>min</sub> - mass<sub>max</sub>].
@@ -39,26 +39,26 @@ For Tephra2, as far as we are concerned here, we only need the two executables c
 Organize your working folder like this:
 
 <pre>
-Inversion/
-├── _example_folder/            -> Example of input files
-│   ├── forwardGrid.utm
-│   ├── inversionConfig.conf
-│   ├── inversionInput.txt
-│   ├── inversionWind.txt
-│   └── runInversion.sh
-├── _scripts/                   -> Scripts used during inversion*
-│   ├── genConfig.py
-│   └── genConfigForward.py
-├── _templates/                 -> Templates used during inversion*
-│   ├── forwardConfTemplate.conf
-│   └── inversionConfTemplate.conf
-├── dependencies/               -> Dependencies for post-processing*
-│   └── xlwrite/
-├── plotBetaPlume.m             -> Used during post-processing*
-├── plotT2.m                    -> Used during post-processing*
-├── processT2Inversion.m        -> Main post-processing function
-├── tephra2012_inversion        -> Tephra2 inversion exec
-└── tephra2-2012                -> Tephra2 forward exec
+ROOT
+├── Inversion/
+│       ├── _example_folder/                    -> Example of input files
+│       │        ├── forwardGrid.utm
+│       │        ├── inversionConfig.conf
+│       │        ├── inversionInput.txt
+│       │        ├── inversionWind.txt
+│       │        └── runInversion.sh
+│       ├── _scripts/                           -> Scripts used during inversion*
+│       │        ├── genConfig.py
+│       ├──  _templates/                        -> Templates used during inversion*
+│       │        ├── forwardConfTemplate.conf
+│       │        └── inversionConfTemplate.conf
+├── dependencies/                               -> Dependencies for post-processing*
+│       └── xlwrite/
+├── plotBetaPlume.m                             -> Used during post-processing*
+├── plotT2.m                                    -> Used during post-processing*
+├── processT2Inversion.m                        -> Main post-processing function
+├── tephra2012_inversion                        -> Tephra2 inversion exec
+└── tephra2-2012                                -> Tephra2 forward exec
 
 * Should not have to be edited
 </pre>
@@ -135,7 +135,8 @@ WindDir | Wind direction (degree from N) - used when fixedWind=0
 
 **Constant parameters**
 
-This section contains parameters that are kept constant during the inversion
+This section contains parameters that are kept constant during the inversion.
+
 Variable | Description
 ---------|------------
 lithicDensity | Density of the lithics (kg/m<sup>3</sup>)
@@ -179,9 +180,13 @@ For a single inversion run, set *BATCH=0* in *inversionConfig.conf* and type:
 For a batch inversion run with a mass range between 10<sup>9</sup> and 10<sup>11</sup> kg, set *BATCH=1* in *inversionConfig.conf* and use the *-t* flag:
 <pre>qsub -t 9-11 runInversion.sh</pre>
 
-### SLURM
 
-### PBSPro
 
-## Inversion output
-Upon successful (yey!) completion of an inversion run, one (single run) or multiple (batch run) folders are created inside *_example_folder/*, named *mass**M**_ht**H***, where **M** and **H** are the lower intervals of the mass (log10 kg) and plume height (km) ranges, respectively.
+## Post-processing
+Upon successful (yey!) completion of an inversion run, one (single run) or multiple (batch run) folders are created inside *_example_folder/*, named *mass**M**_ht**H***, where **M** and **H** are the lower intervals of the mass (log10 kg) and plume height (km) ranges, respectively. For post processing, follow these steps
+
+1. In the *_example_folder/* o your local computer, create a folder named *n/*, where *n* is the number of your inversion attempt (start at 1/ and name the subsequent folders in a continuous way). By doing so, each new inversion attempt doesn't have to delete the previous one, and it becomes easier to track different attempts
+2. Copy the content of *_example_folder/* on the cluster into your local *n/* folder
+3. In Matlab, run the *processInversion.m* script. When asked, go and select your *n/* folder and let the script work
+
+

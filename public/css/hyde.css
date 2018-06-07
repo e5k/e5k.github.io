@@ -99,7 +99,7 @@ html {
     flex-flow: column wrap;
     height: 1.5cm;}
 
-ul {
+.nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
