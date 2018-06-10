@@ -15,46 +15,48 @@ Additionally, Tephra works with UTM coordinates. This function accepts optional 
 The function <cmd>plotT2</cmd> can be downloaded<a href="https://github.com/e5k/Tephra2Utils" target="_blank"> here</a>. One argument is required, which is a string containing the path to the file. Outputs are then matrices of easting (<var>E</var>), northing (<var>N</var>) and mass accumulation (<var>M</var>):
 
 {% highlight matlab %}
-[E, N, M] = plotT2('example.out');
+[E,N,M,Carea,Pmass,cont,varargout] = plotT2(pathToFile, varargin)
 {% endhighlight %}
+
+### Required argument
+
+Argument | Description
+---------|---------
+<var>pathToFile</var> | Path to Tephra2 output file
 
 ### Optional name-value pairs of arguments
 The optional pairs of name-value arguments are summarised below:
-<table>
-  <thead>
-    <tr>
-      <th>Argument</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><cmd>'zone'</cmd></td>
-      <td>UTM zone of the Tephra2 output. Should be a double, positive in the N hemisphere, negative in the S hemisphere</td>
-    </tr>
-		<tr>
-		  <td><cmd>'plot'</cmd></td>
-		  <td>Defines if accumulation is plotted as log10 (<cmd>'log10'</cmd>, default) or linear (<cmd>'linear'</cmd>)</td>
-		</tr>
-		<tr>
-		  <td><cmd>'contours'</cmd></td>
-		  <td>Vector containing the values (kg/m<SUP>2</SUP>) of accumulation to contour. By default set to <cmd>[1,10,100,1000]</cmd></td>
-		</tr>	
-  </tbody>
-</table>
-<div class="figcaption">
-<figcaption></figcaption>
-</div>
 
+Argument | Description
+---------|---------
+<var>'zone'</var> | UTM zone of the Tephra2 output, used to convert projected to geographic coordinates and plot a Google Map background if both [utm2ll](https://uk.mathworks.com/matlabcentral/fileexchange/45699-ll2utm-and-utm2ll) and [plot_google_map](https://uk.mathworks.com/matlabcentral/fileexchange/27627-zoharby-plot-google-map) are available. Should be a double, positive in the N hemisphere, negative in the S hemisphere
+<var>'plot'</var> | Defines if accumulation is plotted as log10 (<pth>'log10'</pth>, default) or linear (<pth>'linear'</pth>)
+<var>'contours'</var> | Vector containing the values (kg/m<SUP>2</SUP>) of accumulation to contour. By default set to <cmd>[1,10,100,1000]</cmd></td>
+<var>'minVal'</var> | Minimum value to be represented on the continuous color surface (kg/m<sup>2</sup>)
+<var>'vent'</var> | Plot the vent, entered as <pth>[easting, northing]</pth> coordinates.
+<var>'points'</var> | Additional points to plot, entered as a 2-columns <pth>[easting,northing]</pth> matrix. If entered as a 3-columns <pth>[easting,northing,value]</pth> matrix, value is used as a label
+
+### Output arguments
+
+Argument | Description
+---------|---------
+<var>E</var> | Easting matrix (m)
+<var>N</var> | Northing matrix (m)
+<var>M</var> | Mass accumulation matrix (kg/m<SUP>2</SUP>)
+<var>Carea</var> | Area of each isomass contour (km<SUP>2</SUP>)
+<var>Pmass</var> | Mass contained within each contour (kg)
+<var>contour</var> | Contours (kg/m<SUP>2</SUP>)
+<var>lat</var> | Optional - latitude matrix, if <var>'zone'</var> is specified
+<var>lon</var> | Optional - longitude matrix, if <var>'zone'</var> is specified
 
 ### Examples
 
 When the argument <cmd>'zone'</cmd> is passed, it is possible to request the matrix versions of latitude and longitude:
 
 {% highlight matlab %}
-[E,N,M]           = plotT2('example.out');
-[E,N,M,LAT,LON]   = plotT2('example.out', 'zone', 18);
-[E,N,M]           = plotT2('example.out', 'plot', 'linear');
-[E,N,M]           = plotT2('example.out', 'contours', [10, 50, 100]);
+plotT2('example.out');
+plotT2('example.out', 'zone', 18);
+plotT2('example.out', 'plot', 'linear');
+plotT2('example.out', 'contours', [10, 50, 100]);
 {% endhighlight %}
 
