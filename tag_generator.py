@@ -63,7 +63,7 @@ print("Tags generated, count", total_tags.__len__())
 
 category_dir = 'category/'
 
-filenames = glob.glob(category_dir + '*md')
+filenames = glob.glob(post_dir + '*md')
 
 
 total_categories = []
