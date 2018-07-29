@@ -20,13 +20,13 @@ Note that to save disk space, the output of Tephra2 is now:
 1. Rounded to a significant digit number
 2. Accumulations below a thresholds are considered equal to zero
 
-Both the significand digit number and the thresholds are controlled in the preferences of TephraProb, accessible from <cmd>File > Preferences</cmd>.
+Both the significant digit number and the thresholds are controlled in the preferences of TephraProb, accessible from <cmd>File > Preferences</cmd>.
 
 ### Export to ASCII files
-Note that the ASCII files previously generated upon completion of the post-processing are not anymore automatically generated, which save a considerable amount of disk storage (i.e. the <pth>3C/</pth>, <pth>GIS/</pth> and <pth>MAT/</pth> foldeds in the <pth>SUM/</pth>, <pth>PROB/</pth> and <pth>IM/</pth> folders). Instead, a new function accessible from <cmd>Post processing > File management > Export to ASCII files</cmd> is available, which allows the user to choose the type and the format of files to export.
+ASCII files previously generated upon completion of the post-processing are not anymore automatically generated, which save a considerable amount of disk storage (i.e. the <pth>3C/</pth>, <pth>GIS/</pth> and <pth>MAT/</pth> folders in the <pth>SUM/</pth>, <pth>PROB/</pth> and <pth>IM/</pth> folders). Instead, a new function accessible from <cmd>Post processing > File management > Export to ASCII files</cmd> is available, which allows the user to choose the type and the format of files to export.
 
 ### Archive Tephra2 files
-A new function available from <cmd>Post processing > File management > Archive Tephra2 files</cmd> offers to compress the files generated for Tephra2 (i.e. the <pth>OUT/</pth>, <pth>CONF/</pth> and <pth>GS/</pth> folders). This was also implemented with concern for disk space usage. Note that this function should only be used **once the Tephra2 modelling has successfully completed**. This process takes a long time due to to the large amount of small files and individual folders created.
+A new function available from <cmd>Post processing > File management > Archive Tephra2 files</cmd> offers to compress the files generated for Tephra2 (i.e. the <pth>OUT/</pth>, <pth>CONF/</pth> and <pth>GS/</pth> folders). This was also implemented with concern for disk space usage. Note that this function should only be used **once the Tephra2 modelling has successfully completed**. This process takes a long time due to the large amount of small files and individual folders created.
 
 ### Probabilistic isomass maps
 The method used to compute probabilistic isomass maps has been re-written and uses a percentile approach rather than an interpolation of iso-probability contours on probability maps. Note that a probability of occurrence of a given isomass is given by **the inverse of the percentile**, i.e. a percentile of 25% reflects a 75% probability of occurrence.
