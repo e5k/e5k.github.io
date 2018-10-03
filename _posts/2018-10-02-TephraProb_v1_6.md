@@ -7,7 +7,7 @@ tags: tephraprob release
 
 There has been a change in the access to the Google Map API used by the function [plot_google_map](https://au.mathworks.com/matlabcentral/fileexchange/27627-zoharby-plot_google_map) by Zohar Bar-Yehuda that can cause problems when TephraProb attempts to retrieve the map background. Google now requires to get an API Key, which needs to be associated with a Google Project and, tadaaaa, a billing account. Although this is likely to remain free for a small number of requests, some might be reluctant to add a billing account to get a key. A new function offering to export maps to Google Earth was therefore implemented, which relies on the [Google Earth Toolbox](https://au.mathworks.com/matlabcentral/fileexchange/12954-google-earth-toolbox) by Scott Lee Davis.
 
-## Changes in TephraProb v1.5
+## Changes in TephraProb v1.6
 ### TephraProb preferences
 The preference pannel has been reworked. Regarding Google Maps, the options are:
 - Choose whether a basemap should be plotted. The option for Google Map  remains, knowing that problems may occur if not used with an API Key;
