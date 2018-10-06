@@ -14,6 +14,8 @@ tag_dir 	= 'tag/'
 post_dir 	= '_posts/'
 filenames 	= glob.glob(post_dir + '*md')
 
+page_dir    = 'pages/'
+filenames 	= filenames + glob.glob(page_dir + '*md')
 
 #post_dir 	= 'pages/'
 
@@ -62,9 +64,6 @@ print("Tags generated, count", total_tags.__len__())
 
 
 category_dir = 'category/'
-
-filenames = glob.glob(post_dir + '*md')
-
 
 total_categories = []
 for filename in filenames:

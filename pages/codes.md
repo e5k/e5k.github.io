@@ -12,7 +12,7 @@ categories: codes
 -->
 {{ site.baseurl }}
 
-Here are listed some of the codes I am working on.
+<!-- Here are listed some of the codes I am working on. -->
 
 ### TephraProb
 **[TephraProb]({{ site.baseurl }}/pages/tephraprob)** is a Matlab toolbox for the probabilistic hazard assessment of tephra fallout.
