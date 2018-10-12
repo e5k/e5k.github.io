@@ -48,35 +48,45 @@ The parallelization is achieved using *job arrays*. Conceptually:
 2. The subset of commands to Tephra2 in each of the sub-file is sent to a different node using a *job array*
 
 On the cluster, split <pth>T2_stor.txt</pth>:
-<pre>
+```bash
 split -l 1000 -a 2 -d T2_stor.txt T2_stor.txt
-</pre>
+```
 
-where <cmd>-l</cmd> is the number of line of each sub-file (here <pth>T2_stor.txt</pth> will be split into subsets of 1000 lines) and <cmd>-a</cmd> is the number of digits appended to the name of the subfile (e.g. -a 2 produced 01, 02 etc...). The last argument is the generic name of the sub-file.
+where <cmd>-l</cmd> is the number of line of each sub-file (here <pth>T2_stor.txt</pth> will be split into subsets of 1000 lines) and <cmd>-a</cmd> is the number of digits appended to the name of the subfile (e.g. -a 2 produces 01, 02 etc...). The last argument is the generic name of the sub-file.
 
-Let's say that this created 10 files named <pth>T2_stor.txt00</pth> to <pth>T2_stor.txt09</pth>. We need to adapt the job array to account for the range 0-9.
+Let's say that this created 10 files named <pth>T2_stor.txt00</pth> to <pth>T2_stor.txt09</pth>. We need to adapt the job array to account for the range 0-9. We then use a handy little piece of code called [GNU Parallel](https://savannah.gnu.org/projects/parallel/) to send single CPU jobs to the nodes.
 
 ### SLURM
 
-On a SLURM cluster, the bash <pth>runTephraProb.sh</pth> should contain the following lines:
-
-<pre>
+On a SLURM cluster, the bash <pth>runTephraProb.sh</pth> might look like that:
+```bash
 module load GCC/4.9.3-2.25
 module load OpenMPI/1.10.2
 module load parallel
 chunk=`printf "%02d" $SLURM_ARRAY_TASK_ID`
 srun parallel -j 16 -a T2_stor.txt$chunk
-</pre>
+```
 
 The job can then be submitted using:
-<pre>
+```bash
 sbatch --array=0-9 runTephraProb.sh
-</pre>
-
-Note the dependency to [GNU Parallel](https://savannah.gnu.org/projects/parallel/).
+```
 
 ### OpenPBS
+On an OpenPBS cluster, the bash <pth>runTephraProb.sh</pth> might look like that:
 
+```bash
+module load openmpi/1.4.5-gnu
+module load parallel
+cd $PBS_O_WORKDIR
+chunk=`printf "%02d" $PBS_ARRAYID`
+mpirun -np 12 -machinefile $PBS_NODEFILE parallel -j 12 -a T2_stor.txt.$chunk
+```
+
+The job can then be submitted using:
+```bash
+qsub -t 0-9 runTephraProb.sh 
+```
 
 ## Post-processing
-Once the modelling is finished, copy the remote version of <pth>RUNS/runName/runNumber/OUT/</pth> on to your local <pth>RUNS/runName/runNumber/OUT/</pth> and go on with the post-processing.
+Once the modelling is finished, copy the remote version of <pth>RUNS/runName/runNumber/OUT/</pth> on to your local <pth>RUNS/runName/runNumber/OUT/</pth> and go on with the post-processing. Check out the command <cmd>rsync</cmd>.
