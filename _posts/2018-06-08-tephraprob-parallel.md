@@ -49,7 +49,7 @@ Now, navigate back to the root of TephraProb and type:
 ```bash
 chmod 755 MODEL/tephra2-2012
 ```
-That should get Tephra2 running on the cluster.
+That should get Tephra2 running on the cluster. Getting a <cmd>File format not recognized</cmd> error? See if [that](https://e5k.github.io/codes/tips/2017/12/11/tephra2_manual_compilation/) helps.
 
 ## Running in parallel
 
