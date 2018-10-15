@@ -21,7 +21,6 @@ Transfer your run, grid and wind files on the cluster. Unless you decide to cust
 <pre>
 ROOT
 ├── MODEL/
-│   └── tephra2-2012
 ├── RUNS/
 │   └── runName/
 │       └── runNumber/
@@ -39,6 +38,18 @@ ROOT
 </pre>
 
 Note that <pth>T2_stor.txt</pth> should be at the root, and all commands specified in it should point to locations that have been uploaded on the cluster. Note that by default, all paths defined in <pth>T2_stor.txt</pth> are *relative*.
+
+## Compiling Tephra2
+Tephra2 needs to be recompiled for the cluster's architecture. On the cluster, from the root of TephraProb, navigate to <pth>MODEL/forward_src/</pth> and enter:
+```bash
+make
+```
+
+Now, navigate back to the root of TephraProb and type:
+```bash
+chmod 755 MODEL/tephra2-2012
+```
+That should get Tephra2 running on the cluster.
 
 ## Running in parallel
 
