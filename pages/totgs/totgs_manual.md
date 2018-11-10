@@ -25,23 +25,25 @@ Grain–size bins can be defined either in mm or φ units, but **must necessaril
 Examples of input files can be found in the <pth>Examples/</pth> folder.
 
 ### Case 1: Geographic coordinates
-|           |  Row 1 (header) | Row 2–m (data)
-|-----------|--------------|-----
-| Column 1  | Lat | Latitude (decimal degrees)
-| Column 2  | Lon | Longitude (decimal degrees) 
-| Column 3  | g/m2 | Tephra accumulation (g/m2)
-| Column 4  | Empty | Empty column
-| Column 5- | Grain–size bin | Weight % of a grain–size class at a given outcrop
+|           |  Row 1 (header) | Row 2– (data) |
+|-----------|--------------|-----|
+| Column 1  | Lat | Latitude (decimal degrees) |
+| Column 2  | Lon | Longitude (decimal degrees)  |
+| Column 3  | g/m2 | Tephra accumulation (g/m2) |
+| Column 4  | Empty | Empty column |
+| Column 5- | Grain–size bin | Weight % of a grain–size class at a given  outcrop |
  
+ 
+ test
 ### Case 2: Projected coordinates
-| |  Row 1 (header) | Row 2–m (data)
-|-------------|-------------|-----
-| Column 1 | East | Easting (m)
-| Column 2 | North | Northing (m)
-| Column 3 | Zone | Zone number (e.g. 19 in N hemisphere, -19 in S)
-| Column 4 | g/m2 | Tephra accumulation (g/m2)
-| Column 5 | Empty | Empty column
-| Column 6- | Grain–size bin | Weight % of a grain–size class at a given outcrop
+|           |  Row 1 (header) | Row 2– (data) |
+|-----------|-------------|----- |
+| Column 1  | East | Easting (m) |
+| Column 2  | North | Northing (m) |
+| Column 3  | Zone | Zone number (e.g. 19 in N hemisphere, -19 in S) |
+| Column 4  | g/m2 | Tephra accumulation (g/m2) |
+| Column 5  | Empty | Empty column |
+| Column 6- | Grain–size bin | Weight % of a grain–size class at a given outcrop |
 
 ## Usage
 In Matlab, navigate to the location of the <pth>TOTGS.m</pth> script and type:
