@@ -34,8 +34,7 @@ Examples of input files can be found in the <pth>Examples/</pth> folder.
 | Column 4  | Empty | Empty column |
 | Column 5- | Grain–size bin | Weight % of a grain–size class at a given  outcrop |
  
- 
- test3
+
 ### Case 2: Projected coordinates
 
 |           |  Row 1 (header) | Row 2– (data) |
