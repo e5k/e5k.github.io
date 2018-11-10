@@ -25,6 +25,7 @@ Grain–size bins can be defined either in mm or φ units, but **must necessaril
 Examples of input files can be found in the <pth>Examples/</pth> folder.
 
 ### Case 1: Geographic coordinates
+
 |           |  Row 1 (header) | Row 2– (data) |
 |---|---|---|
 | Column 1  | Lat | Latitude (decimal degrees) |
@@ -34,8 +35,9 @@ Examples of input files can be found in the <pth>Examples/</pth> folder.
 | Column 5- | Grain–size bin | Weight % of a grain–size class at a given  outcrop |
  
  
- test2
+ test3
 ### Case 2: Projected coordinates
+
 |           |  Row 1 (header) | Row 2– (data) |
 |---|---|---|
 | Column 1  | East | Easting (m) |
