@@ -26,7 +26,7 @@ Examples of input files can be found in the <pth>Examples/</pth> folder.
 
 ### Case 1: Geographic coordinates
 |           |  Row 1 (header) | Row 2–m (data)
-|-----------|--------------|-----|
+|-----------|--------------|-----
 | Column 1  | Lat | Latitude (decimal degrees)
 | Column 2  | Lon | Longitude (decimal degrees) 
 | Column 3  | g/m2 | Tephra accumulation (g/m2)
@@ -35,7 +35,7 @@ Examples of input files can be found in the <pth>Examples/</pth> folder.
  
 ### Case 2: Projected coordinates
 | |  Row 1 (header) | Row 2–m (data)
-|-------------|-------------|-----|
+|-------------|-------------|-----
 | Column 1 | East | Easting (m)
 | Column 2 | North | Northing (m)
 | Column 3 | Zone | Zone number (e.g. 19 in N hemisphere, -19 in S)
