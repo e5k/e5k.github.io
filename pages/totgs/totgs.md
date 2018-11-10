@@ -15,7 +15,7 @@ TOTGS is an upgraded version of the voronoi technique introduced by Bonadonna an
 TOTGS is maintained on <a href="https://github.com/e5k/TOTGS" target="_blank">GitHub</a> and can be cited as *Biass, S., Bonadonna, C., (2014), TOTGS: Total grainsize distribution of tephra fallout, https://vhub.org/resources/3297*.
 
 ### User manual
-The user manual for TOTGS is available <a href="{{ site.baseurl }}/files/totgs_man.pdf" target="_blank">here</a>. Check the blog to see more recent additions.
+The user manual for TOTGS is available [here]({{ site.baseurl }}/pages/totgs_manual). Check the blog to see more recent additions.
 
 ### Related blog entries
 <div class="related">
