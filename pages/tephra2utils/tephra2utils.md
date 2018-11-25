@@ -17,9 +17,10 @@ Follow the link to the homepages of each separate script for more details on the
 
 Function            | Description
 ---------------------|--------
-plotBetaPlume.m | Easily plots the mass distribution in the plume following a beta 
+plotBetaPlume.m | Easily plots the mass distribution in the plume following a beta distribution
 [plotT2.m]({{ site.baseurl }}{% post_url 2017-12-10-plot_tephra2 %}) | Plots the output of Tephra2 on a map
-[processT2Inversion.m]({{ site.baseurl }}{% post_url 2018-06-06-inversion %}) | Process the output on inversion runs
+[processT2Inversion.m]({{ site.baseurl }}{% post_url 2018-06-06-inversion %}) | Process the output of inversion runs
+plotT2Inversion | Plots inversion results
 [Inversion/]({{ site.baseurl }}{% post_url 2018-06-06-inversion %}) | Bash and pyhon scripts to run the inversion on clusters
 runT2.m | Experimental
 

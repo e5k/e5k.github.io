@@ -5,7 +5,30 @@ categories: codes
 tags: gbf probabilities post-processing grid
 ---
 
-Here is presented an extended version of the Matlab post-processing function developed for the **[Great Balls of Fire]({{ site.baseurl }}/pages/gbf)** model for the probabilistic hazard assessment of ballistic impact. This function has been modified so output files of virtually any model can be loaded and processed through methods described <a href="https://www.researchgate.net/publication/304243833_Great_Balls_of_Fire_A_probabilistic_approach_to_quantify_the_hazard_related_to_ballistics_-_A_case_study_at_La_Fossa_volcano_Vulcano_Island_Italy" target="_blank">here</a>. Requirements are:
+Here is presented an extended version of the Matlab post-processing function developed for the **[Great Balls of Fire]({{ site.baseurl }}/pages/gbf)** model for the probabilistic hazard assessment of ballistic impact. 
+
+### Table of content
+- [1. From ballistic modelling to probabilistic hazard assessment](#1-from-ballistic-modelling-to-probabilistic-hazard-assessment)
+	- [1.1 The need of a reference area](#11-the-need-of-a-reference-area)
+	- [1.2 What probabilities?](#12-what-probabilities)
+- [2 Using the function](#2-using-the-function)
+	- [2.1 Input arguments](#21-input-arguments)
+		- [2.1.1 Using the GUI](#211-using-the-gui)
+		- [2.1.2 Using arguments](#212-using-arguments)
+		- [2.1.3 Using an input structure](#213-using-an-input-structure)
+	- [2.2 Output argument](#22-output-argument)
+- [3 Outputs and results](#3-outputs-and-results)
+	- [3.1 ASCII grid format](#31-ascii-grid-format)
+	- [3.2 Matlab format](#32-matlab-format)
+		- [.bal](#bal)
+		- [.pixel](#pixel)
+		- [.concentric](#concentric)
+		- [.radial](#radial)
+- [4 Displaying results](#4-displaying-results)
+
+
+### Requirements
+The initial function provided with the **Great Balls of Fire** model has been modified so output files of virtually any model can be loaded and processed through methods described <a href="https://www.researchgate.net/publication/304243833_Great_Balls_of_Fire_A_probabilistic_approach_to_quantify_the_hazard_related_to_ballistics_-_A_case_study_at_La_Fossa_volcano_Vulcano_Island_Italy" target="_blank">here</a>. Requirements are:
 1. Impact coordinates must be defined in UTM WGS84
 2. Files must be ascii and tab delimited
 3. Columns in the output file should be organised as indicated in the table below. Note that adding extra columns is acceptable

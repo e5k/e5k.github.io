@@ -7,7 +7,26 @@ tags: tephra2utils tephra2 inversion
 
 The current set of functions helps running the advection-diffusion model Tephra2 in inversion mode to estimate the best eruption source parameters (ESP) of a tephra deposit. The functions contain two sections. A first section contains a mixture of bash and python scripts for running the inversion of *OpenPBS* and *SLURM* clusters. A second section contains Matlab scripts for processing the inversion output designed to help its interpretation.
 
-### Introversion
+#### Updates - November 2018
+The inversion scripts have been updated in November 2018. To find the scripts to post-process runs performed before this date, please download the previous version here.
+
+### Table of content
+- [Introversion](#introversion)
+    - [Single vs. batch runs](#single-vs-batch-runs)
+    - [Caveats](#caveats)
+- [Installation](#installation)
+- [Getting started](#getting-started)
+    - [Case-study files](#case-study-files)
+    - [Configuration file](#configuration-file)
+- [Running the inversion](#running-the-inversion)
+    - [Single vs. batch vs. seed runs](#single-vs-batch-vs-seed-runs)
+    - [OpenPBS](#openpbs)
+- [Post-processing](#post-processing)
+    - [Output figures](#output-figures)
+        - [1. *Spaces* of solutions](#1-spaces-of-solutions)
+        - [2. Everything against everything!](#2-everything-against-everything)
+
+## Introversion
 The inversion searches for the set of ESP that best reproduce *observed* values of tephra accumulations (kg/m<sup>2</sup>) with the *computed* values produced by Tephra2. As for any optimization problem, the many degrees of freedom require a critical interpretation of the inversion results. These scripts help building an empirical vision of the results in the perspective of the knowledge of the studied eruption.
 
 For a purpose of illustration, let's consider that the fit depends mainly on *plume height* and *eruption mass*. We will therefore attempt to find the combination of plume height and eruption mass that best reproduce the deposit. To do so, the Tephra2 uses a [downhill simplex](https://en.wikipedia.org/wiki/Nelder–Mead_method) method, which searches for the minimum of a function - here the fit between observed and computed values - between user-defined ranges of [height<sub>min</sub> - height<sub>max</sub>] and [mass<sub>min</sub> - mass<sub>max</sub>].
@@ -15,17 +34,25 @@ For a purpose of illustration, let's consider that the fit depends mainly on *pl
 Unfortunately, this method can suffer from numerical artifacts resulting in "fake" minima, especially when initial user-defined ranges are too large. For instance let's consider two sets of plume heights and mass, height<sub>1</sub>, mass<sub>1</sub> and height<sub>2</sub>, mass<sub>2</sub>, both giving a similarly good solution from a numerical perspective, but height<sub>1</sub>, mass<sub>1</sub> being irrealistic from a volcanological point of view. We therefore need a method to subjectively discard this solution from the inversion result.
 
 ### Single vs. batch runs
-To avoid this problem, it is possible to run the inversion using two approaches, the *single* and *batch* modes. The single mode searches for a minimum within the entire space defined by the ranges of plume heights and masses and consists of one single inversion run. The batch mode splits the space of plume heights and masses into smaller domains, and one inversion run is performed for each domain. So what are the advantages and disadvantages of each method?
+To avoid this problem, it is possible to run the inversion using three approaches, the *single*, the *batch* and the *seed* modes. The **single** mode searches for a minimum within the entire space defined by the ranges of plume heights and masses and consists of one single inversion run. The **batch** mode splits the space of plume heights and masses into smaller domains, and one inversion run is performed for each domain. The **seed** mode, for a lack of a better term, is pretty much the equivalent of the *single* mode repeated multiple times varying the *seed*. The *seed* is a number that controls the reproducability of stochastic runs, and in the case of the inversion it will control the starting point of the optimisation process. In case of unconstrained deposits, varying the seed is likely to affect the results. It is a good procedure to assess the sensitivity of the results to the input seed.
 
-* Single
+ So what are the advantages and disadvantages of each method?
+
+* **Single**
     * *Pros:* Provides the most accurate minimum
     * *Cons:* Can get stuck in local minima
-* Batch
+* **Batch**
     * *Pros:* Provides an overview of all minima on the height-mass space
     * *Cons:* Small sub-spaces do not provide enough flexibility to accuratly define minima
-
+* **Seed**
+    * *Pros:* Advantages of the single approach without disadvantages
+    * *Cons:* Euuh... Not sure, it's pretty much my prefered approach now
+  
 ### Caveats
+
+Below are a few things to keep in mind when using the inversion:
 * The mass is always better constrained than the plume height
+* Constraining the plume height is more difficult because of the fact that in Tephra2, the plume height is intrinsically related to the computation of parameters controlling i) the grain size distribution, ii) the distribution of mass in the plume and iii) empirical parameters
 
 ## Installation
 
@@ -49,14 +76,15 @@ ROOT
 │       │        └── runInversion.sh
 │       ├── _scripts/                           -> Scripts used during inversion*
 │       │        ├── genConfig.py
-│       ├──  _templates/                        -> Templates used during inversion*
+│       ├── _templates/                        -> Templates used during inversion*
 │       │        ├── forwardConfTemplate.conf
 │       │        └── inversionConfTemplate.conf
 ├── dependencies/                               -> Dependencies for post-processing*
 │       └── xlwrite/
 ├── plotBetaPlume.m                             -> Used during post-processing*
 ├── plotT2.m                                    -> Used during post-processing*
-├── processT2Inversion.m                        -> Main post-processing function
+├── processT2Inversion.m                        -> Main post-processing function*
+├── plotT2Inversion.m                           -> Plot results of batch and seed runs*
 ├── tephra2012_inversion                        -> Tephra2 inversion exec
 └── tephra2-2012                                -> Tephra2 forward exec
 
@@ -92,8 +120,9 @@ This section controls the general behaviour of the inversion runs.
 
 Variable | Description
 ---------|------------
-<var>BATCH</var> | Enter 0 for single runs, 1 for batch runs
+<var>BATCH</var> | Enter 0 for *single* runs, 1 for *batch* runs and 2 for *seed* rund
 <var>fixedWind</var> | Enter 0 to use ranges of wind direction/speed, 1 to use a wind profile
+<var>SEED</var> | Used to control the seed for reproducibility. To randomely choose a seed, enter <cmd>-1</cmd>
 
 **Input files**
 
@@ -171,22 +200,43 @@ Tephra2 is parallelised using [OpenMPI](https://www.open-mpi.org) and commonly r
 
 The main script used to run the inversion is *runInversion.sh*. The <pth>_template/</pth> folder contains templates for different cluster architectures, namely *Slurm*, *OpenPBS* and *PBSPro*. Edit the header of the script and copy it to the <pth>_example_folder/</pth> folder. Navigate to <pth>_example_folder/</pth> to start running the script.
 
-### Single vs. batch runs
-For parallelisation purposes, single runs and batch runs are submitted in slightly different ways. For single runs, the mass range is defined in the inversionConfig.conf file. Conversly, batch runs use *job arrays*. Long story short, the mass range is specified upon submission of the job, which will allow each mass increment to be sent to a different node.
+### Single vs. batch vs. seed runs
+For parallelisation purposes, single runs, batch runs and seed runs are submitted in slightly different ways. 
+- For *single* runs, the mass range is defined in the <pth>inversionConfig.conf</pth> file; 
+- For *batch* runs use *job arrays*, the mass range is specified on the command line when submitting the job, which will allow each mass increment to be sent to a different node;
+- For *seed* runs, the mass is specified in <pth>inversionConfig.conf</pth> (as for *single* runs), but the number of seeds is specified on the command line when submitting the job.
 
 ### OpenPBS
-For a single inversion run, set *BATCH=0* in <pth>inversionConfig.conf</pth> and type:
+For a **single** inversion run, set *BATCH=0* in <pth>inversionConfig.conf</pth> and type:
 <pre>qsub runInversion.sh</pre>
-For a batch inversion run with a mass range between 10<sup>9</sup> and 10<sup>11</sup> kg, set *BATCH=1* in <pth>inversionConfig.conf</pth> and use the <cmd>-t</cmd> flag:
+For a **batch inversion** run with a mass range between 10<sup>9</sup> and 10<sup>11</sup> kg, set *BATCH=1* in <pth>inversionConfig.conf</pth> and use the <cmd>-t</cmd> flag:
 <pre>qsub -t 9-11 runInversion.sh</pre>
-
+For a **seed inversion** performing 100 runs with a seed number varying between 1-100, type:
+<pre>qsub -t 1-100 runInversion.sh</pre>
 
 
 ## Post-processing
-Upon successful (yey!) completion of an inversion run, one (single run) or multiple (batch run) folders are created inside <pth>_example_folder/</pth>, named *mass**M**_ht**H***, where **M** and **H** are the lower intervals of the mass (log10 kg) and plume height (km) ranges, respectively. For post processing, follow these steps
+Upon successful (yey!) completion of an inversion run, one (*single* run) or multiple (*batch* run) folders are created inside <pth>_example_folder/</pth>, named *mass**M**_ht**H***, where **M** and **H** are the lower intervals of the mass (log10 kg) and plume height (km) ranges, respectively. For post processing, follow these steps:
 
-1. In the <pth>_example_folder/</pth> o your local computer, create a folder named <pth>n/</pth>, where *n* is the number of your inversion attempt (start at 1/ and name the subsequent folders in a continuous way). By doing so, each new inversion attempt doesn't have to delete the previous one, and it becomes easier to track different attempts
+1. In the <pth>_example_folder/</pth> on your local computer, create a folder named <pth>n/</pth>, where *n* is the number of your inversion attempt (start at 1/ and name the subsequent folders in a continuous way). By doing so, each new inversion attempt doesn't have to delete the previous one, and it becomes easier to track different attempts
 2. Copy the content of <pth>_example_folder/</pth> on the cluster into your local <pth>n/</pth> folder
 3. In Matlab, run the <pth>processInversion.m</pth> script. When asked, go and select your <pth>n/</pth> folder and let the script work
 
+This process will first create four new files in each folder:
+- **obsVScomp.pdf**: Plot of the computed values of tephra accumulation against their observed equivalents;
+- **plume.pdf**: The plume distribution
+- **tephra2.out**: Result of the forward solution
+- **wind.pdf**: Wind profile
+
+Additionally, each inversion attempt is recorded in an Excel file at the root of the <pth>Inversion/</pth> folder in a different sheet named after <pth>n/</pth>. 
+
+### Output figures
+
+#### 1. *Spaces* of solutions
+In the case of *batch* or *seed* runs, the function <cmd>plotT2Inversion</cmd> can be used to explore spaces of results. A plane of fit values is computed and interpolated between two variable of choice. In the case of *batch* runs, this visualisation method is useful to assess the location(s) of minima. In the case of *seed* runs, these figures are helpeful to assess the stability of the inversion output to the seed number.
+
+#### 2. Everything against everything!
+In the case of *seed* runs, the script produces a matrix plot (type <cmd>doc plotmatrix</cmd> in the Matlab command line). I find this plot to be the most informative because:
+1. It allows indentifying populations of solutions from the histograms
+2. It allows indentifying relationships between parameters
 
