@@ -8,7 +8,7 @@ tags: tephra2utils tephra2 inversion
 The current set of functions helps running the advection-diffusion model Tephra2 in inversion mode to estimate the best eruption source parameters (ESP) of a tephra deposit. The functions contain two sections. A first section contains a mixture of bash and python scripts for running the inversion of *OpenPBS* and *SLURM* clusters. A second section contains Matlab scripts for processing the inversion output designed to help its interpretation.
 
 #### Updates - November 2018
-The inversion scripts have been updated in November 2018. To find the scripts to post-process runs performed before this date, please download the previous version here.
+The inversion scripts have been updated in November 2018. To find the scripts to post-process runs performed before this date, please download the previous version [here](https://github.com/e5k/Tephra2Utils/archive/v1.0.zip).
 
 ### Table of content
 - [Introversion](#introversion)
