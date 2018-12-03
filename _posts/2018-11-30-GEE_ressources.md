@@ -10,7 +10,7 @@ Keeping track of interesting ressources on the Google Earth Engine.
 ### Example scripts
 
 - Use of the 25th percentile to make cloud free mosaics [link](https://code.earthengine.google.com/643c86f713c64dea1d921358b8da0530) 
-- Merging of Landsat products [link](https://code.earthengine.google.com/62e1d22b56a11404dbfdbf49d6179f91) discussed [here](https://groups.google.com/forum/#!searchin/google-earth-engine-developers/landsat$20ndvi$20composite|sort:date/google-earth-engine-developers/0kCd3AVkPtM/vFmImVyABAAJ)
+- Merging of Landsat products [link](https://code.earthengine.google.com/62e1d22b56a11404dbfdbf49d6179f91)
 
 
 ### Toolbox
