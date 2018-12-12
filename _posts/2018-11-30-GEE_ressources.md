@@ -24,7 +24,8 @@ Keeping track of interesting resources on the Google Earth Engine.
 - [Roy et al. (2016)](https://www-sciencedirect-com.ezlibproxy1.ntu.edu.sg/science/article/pii/S0034425715302455): Scaling between Landsat 7 and 8
 
 ### Tips
-- Assign value to maked regions [link](https://gis.stackexchange.com/questions/279907/gee-how-to-transform-masked-values-nodata-to-9999)
+- Assign value to masked regions [link](https://gis.stackexchange.com/questions/279907/gee-how-to-transform-masked-values-nodata-to-9999)
+- Empty cells in table export [link](https://groups.google.com/forum/#!searchin/google-earth-engine-developers/reduce$20collection$20empty|sort:date/google-earth-engine-developers/qsoHZ9Dhqlw/**kJncwcXUEAAJ**)
 
 ### Maps
 - Intro to Folium (french) [link](http://www.portailsig.org/content/python-leaflet-folium-ou-comment-creer-des-cartes-interactives-simplement)
