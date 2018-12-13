@@ -2,10 +2,10 @@
 layout: post
 title: Random tools
 categories: notetomyself
-tags: python
+tags: tools
 ---
 
-Just a repository of cool and handy tools
+Just a repository of cool and handy tools.
 
 
 
