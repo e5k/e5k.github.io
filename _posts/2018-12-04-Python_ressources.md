@@ -10,4 +10,4 @@ Keeping track of interesting resources on Python.
 
 
 ### Tutorials
-- [Geology and Python](http://geologyandpython.com): Cool tutorials
+- [Geology and Python](http://geologyandpython.com): Cool tutorials for Python applications to Earth sciences
