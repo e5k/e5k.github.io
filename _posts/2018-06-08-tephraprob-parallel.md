@@ -14,7 +14,7 @@ There is a relatively easy way to parallelise TephraProb on a computer cluster w
 5. Post-process the output files (e.g. probability calculations) locally
 
 ## Setting up remote files
-Following the procedure in the <a href="{{ site.baseurl }}/files/tephraprob_man.pdf" target="_blank">TephraProb manual</a>, all tasks should be completed until section 5.3 - meaning you should be set to hit the <var>Run Tephra2</var> function. The main file that will be used for the parallelisaition is **T2_stor.txt**, located in <pth>RUNS/runName/runNumber/T2_stor.txt</pth>, which contains the Tephra2 commands for all single model runs of the scenario.
+Following the procedure in the <a href="{{ site.baseurl }}/files/tephraprob_man.pdf" target="_blank">TephraProb manual</a>, all tasks should be completed until section 5.3 - meaning you should be set to hit the <var>Run Tephra2</var> function. The main file that will be used for the parallelisation is **T2_stor.txt**, located in <pth>RUNS/runName/runNumber/T2_stor.txt</pth>, which contains the Tephra2 commands for all single model runs of the scenario.
 
 Transfer your run, grid and wind files on the cluster. Unless you decide to customize <pth>T2_stor.txt</pth>, the directory tree once on the cluster should look like the following. Note that **not all** files of the <pth>RUNS/</pth>, <pth>GRID/</pth> and <pth>WIND</pth> folders need to be transferred.
 
@@ -38,6 +38,11 @@ ROOT
 </pre>
 
 Note that <pth>T2_stor.txt</pth> should be at the root, and all commands specified in it should point to locations that have been uploaded on the cluster. Note that by default, all paths defined in <pth>T2_stor.txt</pth> are *relative*.
+
+The <cmd>rsync</cmd> becomes handy here. To copy <pth>RUNS/</pth> folders, you can use something like the following command, which will ignore all unecessary files and folders:
+```bash
+rsync -arvz --exclude *.mat --exclude FIG --exclude KML --exclude LOG --exclude SUM  RUNS/run_name host@server:~/TephraProb/RUNS/
+```
 
 ## Compiling Tephra2
 Tephra2 needs to be recompiled for the cluster's architecture. On the cluster, from the root of TephraProb, navigate to <pth>MODEL/forward_src/</pth> and enter:
@@ -100,4 +105,8 @@ qsub -t 0-9 runTephraProb.sh
 ```
 
 ## Post-processing
-Once the modelling is finished, copy the remote version of <pth>RUNS/runName/runNumber/OUT/</pth> on to your local <pth>RUNS/runName/runNumber/OUT/</pth> and go on with the post-processing. Check out the command <cmd>rsync</cmd>.
+Once the modelling is finished, copy the remote version of <pth>RUNS/runName/runNumber/OUT/</pth> on to your local <pth>RUNS/runName/runNumber/OUT/</pth> and go on with the post-processing. Again, the <cmd>rsync</cmd> command can help you achieve something like that:
+The job can then be submitted using:
+```bash
+rsync -arvz --ignore-existing host@server:~/TephraProb/RUNS/run_name/ RUNS/run_name/
+```
