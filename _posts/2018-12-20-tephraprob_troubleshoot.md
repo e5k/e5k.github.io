@@ -8,8 +8,12 @@ tags: tephraprob troubleshoot
 This is an attempt to track issues that could not be solved within the code. Keep in mind that having a code that works on everybody's computers is hard, especially on Windows where errors can arise because of loaaaaads of different factors. Also, please keep in mind I am not a personal hotline :)
 
 ### Content
+- [tags: tephraprob troubleshoot](#tags-tephraprob-troubleshoot)
+  - [Content](#content)
 - [ECMWF-Related issues](#ecmwf-related-issues)
   - [Pip](#pip)
+    - [Case ney :(](#case-ney)
+    - [Case yey!](#case-yey)
   - [SSL](#ssl)
   - [Setuptools](#setuptools)
   - [ECMWF Python API](#ecmwf-python-api)
@@ -24,13 +28,18 @@ Pip is a package manager, see it as an AppStore for nerds, but the principle is 
 - **Linux**: I assume you know how to do it
 
 Now type:
+
 ```pip```
 
+#### Case ney :(
 Do you see anything that tells you that <cmd>pip</cmd> is not a recognized command? Then you need to install it. First, still in the terminal, let's hope that the following command works
 
 ```easy_install pip```
 
 Else, you unfortunately need to figure it out using [this tutorial](https://www.makeuseof.com/tag/install-pip-for-python/)
+
+#### Case yey!
+Move on to installing the required package as described below!
 
 ### SSL
 Error:
