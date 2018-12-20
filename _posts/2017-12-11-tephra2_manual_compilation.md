@@ -2,7 +2,7 @@
 layout: post
 title: Manual compilation of Tephra2
 categories: codes tips
-tags: tephraprob tephra2 compilation problems
+tags: tephraprob tephra2 troubleshoot
 ---
 
 TephraProb compiles Tephra2 through a bit of Matlab hocus pocus to facilitate problems of OS dependancy, but the mighty Matlab can sometime fail us. In this case, it becomes necessary to manually compile Tephra2 from the command line to see what the error message is. I spent a fair amount of time writing this procedure in emails to people who encountered problems and I thought I would write it down here.

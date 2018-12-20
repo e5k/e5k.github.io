@@ -2,7 +2,7 @@
 layout: post
 title: Wind data for Tephra2
 categories: tips
-tags: tephra2 problems
+tags: tephra2 troubleshoot
 ---
 
 I thought I'd share some problems I've recently encountered with the format of wind files used in Tephra2. Just as a reminder, wind file should be a 3-columns, tab-delimited ASCII file containing:

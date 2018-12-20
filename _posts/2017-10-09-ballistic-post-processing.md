@@ -2,12 +2,18 @@
 layout: post
 title: Quantifying probabilities from ballistic models
 categories: codes
-tags: gbf probabilities post-processing grid
+tags: gbf
 ---
 
 Here is presented an extended version of the Matlab post-processing function developed for the **[Great Balls of Fire]({{ site.baseurl }}/pages/gbf)** model for the probabilistic hazard assessment of ballistic impact. 
 
 ### Table of content
+- [tags: gbf](#tags-gbf)
+	- [Table of content](#table-of-content)
+	- [Requirements](#requirements)
+	- [Source material](#source-material)
+	- [Dependencies](#dependencies)
+	- [Access the code](#access-the-code)
 - [1. From ballistic modelling to probabilistic hazard assessment](#1-from-ballistic-modelling-to-probabilistic-hazard-assessment)
 	- [1.1 The need of a reference area](#11-the-need-of-a-reference-area)
 	- [1.2 What probabilities?](#12-what-probabilities)
