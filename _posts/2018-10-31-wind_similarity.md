@@ -26,10 +26,10 @@ The similarity between one wind profile and an average profiles is assessed foll
 ## Use the tool
 Upon clickling the tool, keep in mind that the average data used in the process is the data that is plotted in the axis. So should you select the average over a specific range of months, the most similar wind profile will reflect that range.
 
-The first option popping up allows to choose a range of elevations over which the previous calculation is applied. Having a plume height of 15 m asl above a volcano located at 5 km asl, the entire range of altitudes provided by reanalysis databases might not be relevant. This option allows to target where the similarity matters,
+The first option popping up allows to choose a range of elevations over which the previous calculation is applied. Having a plume height of 15 km asl above a volcano located at 5 km asl, the entire range of altitudes provided by reanalysis databases might not be relevant. This option allows to target where the similarity matters,
 
 The next window that opens contains the 100 most similar wind profiles ordered from top to bottom in decreasing similarity. In other word, the first item in the list is the best fit. Each wind profile is named with the date - remember that the hours are UTC - and the corresponding file number as named by TephraProb. You can now explore which single profile is best for you by plotting one or multiple profiles.
 
 
 
-![very good]({{ site.baseurl }}/img/blog/similarwind.jpg)
+![Wind interface]({{ site.baseurl }}/img/blog/similarwind.jpg)
