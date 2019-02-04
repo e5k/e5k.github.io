@@ -21,6 +21,9 @@ categories: about
 
 ## Publications
 
+### 2019
+- **Biass, S.**, Bonadonna C., Houghton B.F., 2019. A step-by-step evaluation of empirical methods to quantify eruption source parameters from tephra-fall deposits. J Appl Volcanol 8:1–16
+
 ### 2018
 - **Biass, S.**, Swanson, D.A., Houghton, B.F., 2018. New perspective on the nineteenth-century golden pumice deposit of Kīlauea Volcano, in: Poland, M.P., Garcia, M.O., Camp, V.E., Grunder, A. (Eds.), Field Volcanology: A Tribute to the Distinguished Career of Don Swanson. Geological Society of America.
 - Mitchell, S.J., **Biass, S.**, Houghton, B.F., Anderson, A., Bonny, E., Walker, B.H., Mintz, B.G., Turner, N.R., Frank, D., Carey, R.J., Rosenberg, M.D., 2018. The interplay among clast size, vesicularity, postfragmentation expansion, and clast breakage: An example from the 1.8 ka Taupo eruption, in: Poland, M.P., Garcia, M.O., Camp, V.E., Grunder, A. (Eds.), Field Volcanology: A Tribute to the Distinguished Career of Don Swanson. Geological Society of America.
