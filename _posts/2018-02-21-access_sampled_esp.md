@@ -23,10 +23,12 @@ It is therefore necessary to re-index ``dataT2`` to the order of the ESPs contai
 
 ### Re-index ESPs with outputs
 
-```Matlab
-load RUNS/Sakurajima/2/Sakurajima_2 # Load the second sampling attempt of the run called Sakurajima
+``` matlab
+# Load the second sampling attempt of the run called Sakurajima
+load RUNS/Sakurajima/2/Sakurajima_2 
 
-load RUNS/Sakurajima/2/DATA/dataT2_all.mat # Load the isomass output
+# Load the isomass output
+load RUNS/Sakurajima/2/DATA/dataT2_all.mat 
 
 # Show the loaded variables
 data.stor
@@ -50,7 +52,7 @@ run_ESPs = esp(random_run, :);
 
 Plot a histogram of the plume height:
 
-```Matlab
+``` matlab
 toPlot = [data.stor.ht]; % Need to vectorize the data
 
 figure;
