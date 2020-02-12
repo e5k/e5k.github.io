@@ -8,15 +8,14 @@ tags: tephraprob troubleshoot
 This is an attempt to track issues that could not be solved within the code. Keep in mind that having a code that works on everybody's computers is hard, especially on Windows where errors can arise because of loaaaaads of different factors. Also, please keep in mind I am not a personal hotline :)
 
 ### Content
-- [tags: tephraprob troubleshoot](#tags-tephraprob-troubleshoot)
-  - [Content](#content)
 - [ECMWF-Related issues](#ecmwf-related-issues)
   - [Pip](#pip)
-    - [Case ney :(](#case-ney)
     - [Case yey!](#case-yey)
   - [SSL](#ssl)
   - [Setuptools](#setuptools)
   - [ECMWF Python API](#ecmwf-python-api)
+- [Tephra2 related issues](#tephra2-related-issues)
+  - [Mac OS 10.14 Mojave](#mac-os-1014-mojave)
 
 ## ECMWF-Related issues
 
@@ -62,3 +61,7 @@ Fix:
 
 ### ECMWF Python API
 Summary of troubleshooting issues [here](https://confluence.ecmwf.int/display/WEBAPI/Web-API+Troubleshooting).
+
+## Tephra2 related issues
+### Mac OS 10.14 Mojave
+If error during compilation, [this thread](https://stackoverflow.com/questions/52509602/cant-compile-c-program-on-a-mac-after-upgrade-to-mojave) helps fixing it.
