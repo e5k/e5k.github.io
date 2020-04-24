@@ -90,7 +90,7 @@ var quoteArray = [
     	image:"../img/dude.jpg"
     },
     {
-    	quote:"Look at our current situation with that camel fucker over in Iraq. Pacifism is not something to hide behind.",
+    	quote:"Pacifism is not something to hide behind.",
     	name:"Uncle Walter",
     	image:"../img/walter.jpg"
     },
@@ -110,7 +110,7 @@ var quoteArray = [
     	image:"../img/walter.jpg"
     },
     {
-    	quote:"You said it, man. Nobody fucks with the Jesus.",
+    	quote:"You said it, man. Nobody f%^&s with the Jesus.",
     	name:"Uncle Jesus",
     	image:"../img/jesus.jpg"
     },
