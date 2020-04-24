@@ -20,7 +20,12 @@ var quoteArray = [
     	image:"../img/dude.jpg"
     },
     {
-    	quote:"Nobody fucks with the Jesus.",
+    	quote:"Yeah, well, you know, that’s just, like, your opinion, man.",
+    	name:"Uncle Jeffrey",
+    	image:"../img/dude.jpg"
+    },
+    {
+    	quote:"Nobody f#&*s with the Jesus.",
     	name:"Uncle Jesus",
     	image:"../img/jesus.jpg"
     },
@@ -30,7 +35,12 @@ var quoteArray = [
     	image:"../img/dude.jpg"
     },
     {
-    	quote:"Fuck it, Dude, let's go bowling.",
+    	quote:"That rug really tied the room together.",
+    	name:"Uncle Walter",
+    	image:"../img/walter.jpg"
+    },
+    {
+    	quote:"F&%$ it, Dude, let's go bowling.",
     	name:"Uncle Walter",
     	image:"../img/walter.jpg"
     },
@@ -50,7 +60,7 @@ var quoteArray = [
     	image:"../img/walter.jpg"
     },
     {
-    	quote:"You want a toe? I can get you a toe, believe me. There are ways, Dude. You don't wanna know about it, believe me. Hell, I can get you a toe by 3 o'clock this afternoon... with nail polish. These fucking amateurs...",
+    	quote:"You want a toe? I can get you a toe, believe me. There are ways, Dude. You don't wanna know about it, believe me. Hell, I can get you a toe by 3 o'clock this afternoon... with nail polish. These f#&(*#&) amateurs...",
     	name:"Uncle Walter",
     	image:"../img/walter.jpg"
     },
@@ -70,12 +80,12 @@ var quoteArray = [
     	image:"../img/walter.jpg"
     },
     {
-    	quote:"I hate the fuckin' Eagles man.",
+    	quote:"I hate the f#$%&*' Eagles man.",
     	name:"Uncle Jeffrey",
     	image:"../img/dude.jpg"
     },
     {
-    	quote:"Mmy wife, Bunny? Do you see a wedding ring on my finger? Does this place look like I'm fucking married? The toilet seat's up, man!",
+    	quote:"Mmy wife, Bunny? Do you see a wedding ring on my finger? Does this place look like I'm f&(#)@ married? The toilet seat's up, man!",
     	name:"Uncle Jeffrey",
     	image:"../img/dude.jpg"
     },
@@ -84,26 +94,31 @@ var quoteArray = [
     	name:"Uncle Walter",
     	image:"../img/walter.jpg"
     },
-    // {
-    // 	quote:"Phone's ringin', dude.",
-    // 	name:"Uncle Donnie",
-    // 	image:"../img/donny.jpg"
-    // },
-    // {
-    // 	quote:"I am the walrus.",
-    // 	name:"Uncle Donnie",
-    // 	image:"../img/donny.jpg"
-    // },
+    {
+    	quote:"Phone's ringin', dude.",
+    	name:"Uncle Donnie",
+    	image:"../img/donny.jpg"
+    },
+    {
+    	quote:"I am the walrus.",
+    	name:"Uncle Donnie",
+    	image:"../img/donny.jpg"
+    },
     {
     	quote:"Whereas what we have here? A bunch of fig-eaters wearing towels on their heads, trying to find reverse in a Soviet tank. This is not a worthy adversary.",
     	name:"Uncle Walter",
     	image:"../img/walter.jpg"
     },
-    // {
-    // 	quote:"No, he's a sex offender. With a record. He served 6 months in Chino for exposing himself to an eight year old.",
-    // 	name:"Uncle Walter",
-    // 	image:"../img/walter.jpg"
-    // }
+    {
+    	quote:"You said it, man. Nobody fucks with the Jesus.",
+    	name:"Uncle Jesus",
+    	image:"../img/jesus.jpg"
+    },
+    {
+    	quote:"Hey, nice marmot.",
+    	name:"Uncle Jeffrey",
+    	image:"../img/dude.jpg"
+    },
 ];
 
 //grab html elements
