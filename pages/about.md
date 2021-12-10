@@ -28,6 +28,7 @@ categories: about
 
 #### 2021
 
+- Aubry, T.J., Engwell, S., Bonadonna, C., Carazzo, G., Scollo, S., Van Eaton, A.R., Taylor, I.A., Jessop, D., Eychenne, J., Gouhier, M., Mastin, L.G., Wallace, K.L., **Biass, S.**, Bursik, M., Grainger, R.G., Jellinek, A.M., Schmidt, A., 2021. The Independent Volcanic Eruption Source Parameter Archive (IVESPA, version 1.0): A new observational database to support explosive eruptive column model validation and development. Journal of Volcanology and Geothermal Research 417, 107295.
 - Bonadonna, C., Frischknecht, C., Menoni, S., Romerio, F., Gregg, C.E., Rosi, M., **Biass, S**., Asgary, A., Pistolesi, M., Guobadia, D., Gattuso, A., Ricciardi, A., Cristiani, C., 2021b. Integrating hazard, exposure, vulnerability and resilience for risk and emergency management in a volcanic context: the ADVISE model. J Appl. Volcanol. 10, 7.
 - Gattuso, A., Bonadonna, C., Frischknecht, C., Cuomo, S., Baumann, V., Pistolesi, M., **Biass, S.**, Arrowsmith, J.R., Moscariello, M., Rosi, M., 2021. Lahar risk assessment from source identification to potential impact analysis: the case of Vulcano Island, Italy 10, 23.
 - Poulidis, A.P., **Biass, S.**, Bagheri, G., Takemi, T., Iguchi, M., 2021. Atmospheric vertical velocity - a crucial component in understanding proximal deposition of volcanic ash. Earth and Planetary Science Letters 566, 116980.
